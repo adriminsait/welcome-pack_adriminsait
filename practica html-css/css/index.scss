@@ -1,0 +1,199 @@
+$font-stack: San Francisco, sans-serif;
+$primary-color: white;
+$tittle: black;
+$product-height: 500px;
+$navbar-height: 50px;
+
+//por defecto aplico las reglas establecidas para movil y modifico lo necesario 
+//para dispositivos mas grandes  --- Mobile first---
+
+* {
+   font-family: $font-stack;
+}
+
+.main{
+   display: flex;
+   flex-direction: column;
+}
+
+.product {
+   display: flex;
+   flex-direction: column;
+   margin-top: 15px;
+   margin-bottom: 40px;
+   width: 100%;
+   height: $product-height + $navbar-height;
+   text-align: center;
+
+   &__name{
+      margin-top: 3%;
+      font-size: 35px;
+      font-weight: bold;
+
+      &--with-logo{
+         height: 8%;
+         margin-top: 0;
+         display:flex;
+         flex-direction: row;
+         justify-content: center;
+      }
+
+      &__icon{
+         height: 80%;
+      }
+   }
+
+   &__description{
+      font-size: 20px;
+      margin-top: 7px;
+
+      &--pink-13{
+         color: palevioletred;
+      }
+   }
+
+   &__links{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      &__style{
+         font-size: 17px;
+         margin: 20px;
+         text-decoration: none;
+         color: rgb(47, 104, 209);
+
+         &::after{
+            margin-right: 3px;
+            content: " >";
+         }
+
+         &:hover{
+            text-decoration: underline;
+         }
+      }
+   }
+
+   &__image{
+      height: 80%;
+
+      &__icon{
+         height: 100%;
+      }
+
+      &--series7{
+         height: 60%;
+      }
+   }
+
+   &__new{
+      margin-top: 3%;
+      font-size: 15px;
+      color: rgba(250, 72, 2, 0.973);
+   }
+
+   &__serie{
+      font-size: 20px;
+      color: rgba(184, 38, 38, 0.815);
+      font-weight: bold;
+   }
+   
+}
+
+.other_products{
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+   width: 100%;
+   height: $product-height + $navbar-height;
+   text-align: center;
+
+   &__product{
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      margin-bottom: 40px;
+      width: 100%;
+      height: $product-height + $navbar-height;
+      text-align: center;
+   
+      &__name{
+         margin-top: 3%;
+         font-size: 35px;
+         font-weight: bold;
+   
+         &--with-logo{
+            height: 8%;
+            margin-top: 0;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+         }
+   
+         &__icon{
+            height: 80%;
+         }
+      }
+   
+      &__description{
+         font-size: 20px;
+         margin-top: 7px;
+   
+         &--pink-13{
+            color: palevioletred;
+         }
+      }
+   
+      &__links{
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+   
+         &__style{
+            font-size: 17px;
+            margin: 20px;
+            text-decoration: none;
+            color: rgb(47, 104, 209);
+   
+            &::after{
+               margin-right: 3px;
+               content: " >";
+            }
+   
+            &:hover{
+               text-decoration: underline;
+            }
+         }
+      }
+   
+      &__image{
+         height: 80%;
+
+         &__icon{
+            height: 100%;
+         }
+         
+      }
+   
+      &__new{
+         margin-top: 3%;
+         font-size: 15px;
+         color: rgba(250, 72, 2, 0.973);
+      }
+   
+      &__serie{
+         font-size: 20px;
+         color: rgba(184, 38, 38, 0.815);
+         font-weight: bold;
+      }
+   }
+
+}
+
+
+@media (min-width: 768px) {
+   p {
+       font-size: 16px;
+       color: yellow;
+   }
+}

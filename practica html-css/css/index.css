@@ -1,0 +1,235 @@
+* {
+  font-family: San Francisco, sans-serif;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 550px;
+  text-align: center;
+}
+
+.product__name {
+  margin-top: 3%;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.product__name--with-logo {
+  height: 8%;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__name__icon {
+  height: 80%;
+}
+
+.product__description {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.product__description--pink-13 {
+  color: palevioletred;
+}
+
+.product__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__links__style {
+  font-size: 17px;
+  margin: 20px;
+  text-decoration: none;
+  color: #2f68d1;
+}
+
+.product__links__style::after {
+  margin-right: 3px;
+  content: " >";
+}
+
+.product__links__style:hover {
+  text-decoration: underline;
+}
+
+.product__image {
+  height: 80%;
+}
+
+.product__image__icon {
+  height: 100%;
+}
+
+.product__image--series7 {
+  height: 60%;
+}
+
+.product__new {
+  margin-top: 3%;
+  font-size: 15px;
+  color: rgba(250, 72, 2, 0.973);
+}
+
+.product__serie {
+  font-size: 20px;
+  color: rgba(184, 38, 38, 0.815);
+  font-weight: bold;
+}
+
+.other_products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 550px;
+  text-align: center;
+}
+
+.other_products__product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 550px;
+  text-align: center;
+}
+
+.other_products__product__name {
+  margin-top: 3%;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.other_products__product__name--with-logo {
+  height: 8%;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.other_products__product__name__icon {
+  height: 80%;
+}
+
+.other_products__product__description {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.other_products__product__description--pink-13 {
+  color: palevioletred;
+}
+
+.other_products__product__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.other_products__product__links__style {
+  font-size: 17px;
+  margin: 20px;
+  text-decoration: none;
+  color: #2f68d1;
+}
+
+.other_products__product__links__style::after {
+  margin-right: 3px;
+  content: " >";
+}
+
+.other_products__product__links__style:hover {
+  text-decoration: underline;
+}
+
+.other_products__product__image {
+  height: 80%;
+}
+
+.other_products__product__image__icon {
+  height: 100%;
+}
+
+.other_products__product__new {
+  margin-top: 3%;
+  font-size: 15px;
+  color: rgba(250, 72, 2, 0.973);
+}
+
+.other_products__product__serie {
+  font-size: 20px;
+  color: rgba(184, 38, 38, 0.815);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 16px;
+    color: yellow;
+  }
+}
+/*# sourceMappingURL=index.css.map */
