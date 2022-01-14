@@ -7,308 +7,157 @@
       <link rel="stylesheet" type="text/css" href="../css/index.css"/>
       </head>
 
-   <body class="page-home ac-nav-overlap body-with-ribbon" data-anim-scroll-group="body">
+   <body>
+      <div class="main">
+         <nav role="navigation">
+            <div class="navbar">
+               <input type="checkbox" />
 
-      <!-- <h1 class="visuallyhidden">Apple</h1>
-   
-      
-   
-   <meta name="ac-gn-store-key" content="SFX9YPYY9PPXCU9KH">
-   <aside id="ac-gn-segmentbar" class="ac-gn-segmentbar" lang="es-ES" dir="ltr" data-strings="{ 'exit': 'Salir', 'view': 'Página de inicio de la tienda {%STOREFRONT%}', 'segments': { 'smb': 'Página de inicio del Store para Empresas', 'eduInd': 'Página de inicio del Store para Educación', 'other': 'Página de inicio del Store' } }"></aside>
-   <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
-   <nav id="ac-globalnav" class="js no-touch windows no-firefox" role="navigation" aria-label="Navegación general" data-hires="false" data-analytics-region="global nav" lang="es-ES" dir="ltr" data-www-domain="www.apple.com" data-store-locale="es" data-store-root-path="/es" data-store-api="/[storefront]/shop/bag/status" data-search-locale="es_ES" data-search-suggestions-api="/search-services/suggestions/" data-search-defaultlinks-api="/search-services/suggestions/defaultlinks/">
-      <div class="ac-gn-content">
-         <ul class="ac-gn-header">
-            <li class="ac-gn-item ac-gn-menuicon">
-               <a href="#ac-gn-menustate" role="button" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
-                  <span class="ac-gn-menuanchor-label">Global Nav Abrir menú</span>
-               </a>
-               <a href="#" role="button" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
-                  <span class="ac-gn-menuanchor-label">Global Nav Cerrar menú</span>
-               </a>
-               <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
-                  <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
-                     <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
-                  </span>
-                  <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
-                     <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
-                  </span>
-               </label>
-            </li>
-            <li class="ac-gn-item ac-gn-apple">
-               <a class="ac-gn-link ac-gn-link-apple" href="/es/" data-analytics-title="apple home" id="ac-gn-firstfocus-small">
-                  <span class="ac-gn-link-text">Apple</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
-               <div class="ac-gn-bag-wrapper">
-                  <a class="ac-gn-link ac-gn-link-bag" href="/es/shop/goto/bag" data-analytics-title="bag" data-analytics-click="bag" aria-label="Bolsa" data-string-badge="Bolsa de la compra con número de artículos:" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="ac-gn-bagview-content" tabindex="0">
-                     <span class="ac-gn-link-text">Bolsa</span>
-                  </a>
-                  <span class="ac-gn-bag-badge" aria-hidden="true" data-analytics-title="bag" data-analytics-click="bag">
-                     <span class="ac-gn-bag-badge-separator"></span>
-                     <span class="ac-gn-bag-badge-number"></span>
-                     <span class="ac-gn-bag-badge-unit">+</span>
-                  </span>
+               <!-- Some spans to act as a hamburger -->
+               <span></span>
+               <span></span>
+               <span></span>
+               
+               <ul class="navbar__menu">
+                  <a href="#"><li>Tienda</li></a>
+                  <a href="#"><li>Mac</li></a>
+                  <a href="#"><li>iPad</li></a>
+                  <a href="#"><li>iPhone</li></a>
+                  <a href="#"><li>Watch</li></a>
+                  <a href="#"><li>Airpod</li></a>
+                  <a href="#"><li>TV y Casa</li></a>
+                  <a href="#"><li>Solo en Apple</li></a>
+                  <a href="#"><li>Accesorios</li></a>
+                  <a href="#"><li>Soporte</li></a>
+               </ul>
+
+               <div class="navbar__logo">
+                  <img src="../img/logoblanco.png" class="navbar__logo__icon">
                </div>
-               <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
-            </li>
-         </ul>
-         <div class="ac-gn-search-placeholder-container" role="search">
-            <div class="ac-gn-search ac-gn-search-small">
-               <a id="ac-gn-link-search-small" class="ac-gn-link" href="/es/search" data-analytics-title="search" data-analytics-intrapage-link="" aria-label="Buscar en apple.com" role="button" aria-haspopup="true">
-                  <div class="ac-gn-search-placeholder-bar">
-                     <div class="ac-gn-search-placeholder-input">
-                        <div class="ac-gn-search-placeholder-input-text" aria-hidden="true">
-                           <div class="ac-gn-link-search ac-gn-search-placeholder-input-icon"></div>
-                           <span class="ac-gn-search-placeholder">Buscar en apple.com</span>
-                        </div>
-                     </div>
-                     <div class="ac-gn-searchview-close ac-gn-searchview-close-small ac-gn-search-placeholder-searchview-close">
-                        <span class="ac-gn-searchview-close-cancel" aria-hidden="true">Cancelar</span>
-                     </div>
-                  </div>
+
+               <div class="navbar__cesta">
+                  <a href="#">
+                  <img src="../img/cesta.jpg" class="navbar__cesta__icon">
                </a>
+               </div>
             </div>
+         </nav>
+
+         <div class="separator"></div>
+
+         <div class="product">
+               <div class="product__name">iPhone 13 Pro</div>
+               <div class="product__description">Prodigioso Pro.</div>
+               <div class="product__links">
+                  <a class="product__links__style" href="#">Más información</a>
+                  <a class="product__links__style" href="#">Comprar</a>
+               </div>
+               <div class="product__image">
+                  <img src="../img/iphone13pro.png" class="product__image__icon" alt="iPhone 13 Pro">
+               </div>
          </div>
-         <ul class="ac-gn-list">
-            <li class="ac-gn-item ac-gn-apple">
-               <a class="ac-gn-link ac-gn-link-apple" href="/es/" data-analytics-title="apple home" id="ac-gn-firstfocus">
-                  <span class="ac-gn-link-text">Apple</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-store">
-               <a class="ac-gn-link ac-gn-link-store" href="/es/shop/goto/store" data-analytics-title="store">
-                  <span class="ac-gn-link-text">Tienda</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
-               <a class="ac-gn-link ac-gn-link-mac" href="/es/mac/" data-analytics-title="mac">
-                  <span class="ac-gn-link-text">Mac</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
-               <a class="ac-gn-link ac-gn-link-ipad" href="/es/ipad/" data-analytics-title="ipad">
-                  <span class="ac-gn-link-text">iPad</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
-               <a class="ac-gn-link ac-gn-link-iphone" href="/es/iphone/" data-analytics-title="iphone">
-                  <span class="ac-gn-link-text">iPhone</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
-               <a class="ac-gn-link ac-gn-link-watch" href="/es/watch/" data-analytics-title="watch">
-                  <span class="ac-gn-link-text">Watch</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-airpods">
-               <a class="ac-gn-link ac-gn-link-airpods" href="/es/airpods/" data-analytics-title="airpods">
-                  <span class="ac-gn-link-text">AirPods</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-tvhome">
-               <a class="ac-gn-link ac-gn-link-tvhome" href="/es/tv-home/" data-analytics-title="tv and home">
-                  <span class="ac-gn-link-text">TV y Casa</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-onlyonapple">
-               <a class="ac-gn-link ac-gn-link-onlyonapple" href="/es/services/" data-analytics-title="only on apple">
-                  <span class="ac-gn-link-text">Solo en Apple</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-accessories">
-               <a class="ac-gn-link ac-gn-link-accessories" href="/es/shop/goto/buy_accessories" data-analytics-title="accessories">
-                  <span class="ac-gn-link-text">Accesorios</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-support">
-               <a class="ac-gn-link ac-gn-link-support" href="https://support.apple.com/es-es" data-analytics-title="support">
-                  <span class="ac-gn-link-text">Soporte</span>
-               </a>
-            </li>
-            <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
-               <a id="ac-gn-link-search" class="ac-gn-link ac-gn-link-search" href="/es/search" data-analytics-title="search" data-analytics-intrapage-link="" aria-label="Buscar en apple.com" role="button" aria-haspopup="true"></a>
-            </li>
-            <li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
-               <div class="ac-gn-bag-wrapper">
-                  <a class="ac-gn-link ac-gn-link-bag" href="/es/shop/goto/bag" data-analytics-title="bag" data-analytics-click="bag" aria-label="Bolsa" data-string-badge="Bolsa de la compra con número de artículos: {%BAGITEMCOUNT%}" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="ac-gn-bagview-content">
-                     <span class="ac-gn-link-text">Bolsa</span>
-                  </a>
-                  <span class="ac-gn-bag-badge" aria-hidden="true" data-analytics-title="bag" data-analytics-click="bag">
-                     <span class="ac-gn-bag-badge-separator"></span>
-                     <span class="ac-gn-bag-badge-number"></span>
-                     <span class="ac-gn-bag-badge-unit">+</span>
-                  </span>
-               </div>
-               <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
-            </li>
-         </ul>
-         <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search" data-analytics-region="search">
-            <div class="ac-gn-searchview-content">
-               <div class="ac-gn-searchview-bar">
-                  <div class="ac-gn-searchview-bar-wrapper">
-                     <form id="ac-gn-searchform" class="ac-gn-searchform" action="/es/search" method="get">
-                        <div class="ac-gn-searchform-wrapper">
-                           <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" aria-label="Buscar en apple.com" placeholder="Buscar en apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-owns="quicklinks suggestions">
-                           <input id="ac-gn-searchform-src" type="hidden" name="src" value="globalnav">
-                           <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled="" aria-label="Realizar búsqueda"> </button>
-                           <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled="" aria-label="Borrar búsqueda">
-                              <span class="ac-gn-searchform-reset-background"></span>
-                           </button>
-                        </div>
-                     </form>
-                     <button id="ac-gn-searchview-close-small" class="ac-gn-searchview-close ac-gn-searchview-close-small" aria-label="Cancelar búsqueda">
-                        <span class="ac-gn-searchview-close-cancel" aria-hidden="true">
-                           Cancelar
-                        </span>
-                     </button>
-                  </div>
-               </div>
-               <aside id="ac-gn-searchresults" class="ac-gn-searchresults" data-string-quicklinks="Enlaces rápidos" data-string-suggestions="Sugerencias de búsqueda" data-string-noresults="">	<section class="ac-gn-searchresults-section ac-gn-searchresults-section-defaultlinks" data-analytics-region="defaultlinks search">
-         <div class="ac-gn-searchresults-section-wrapper">
-            <h3 class="ac-gn-searchresults-header ac-gn-searchresults-animated">Enlaces rápidos</h3>
-            <ul class="ac-gn-searchresults-list" id="defaultlinks" role="listbox">
-               <li class="ac-gn-searchresults-item ac-gn-searchresults-animated" role="presentation">
-                  <a href="https://www.apple.com/es/shop/goto/temporary_closures" role="option" class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks" data-query="no keyword" data-section="defaultlinks" data-items="5" data-index="0" data-label="Preguntas frecuentes sobre visitas al Apple&nbsp;Store" data-analytics-click="eVar23: {data-query} | {data-section} | {data-items} | {data-label} | {data-index}, events:event50">Preguntas frecuentes sobre visitas al Apple&nbsp;Store</a>
-               </li>
-               <li class="ac-gn-searchresults-item ac-gn-searchresults-animated" role="presentation">
-                  <a href="https://www.apple.com/es/shop/goto/shop" role="option" class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks" data-query="no keyword" data-section="defaultlinks" data-items="5" data-index="1" data-label="Compra online en el Apple&nbsp;Store" data-analytics-click="eVar23: {data-query} | {data-section} | {data-items} | {data-label} | {data-index}, events:event50">Compra online en el Apple&nbsp;Store</a>
-               </li>
-               <li class="ac-gn-searchresults-item ac-gn-searchresults-animated" role="presentation">
-                  <a href="https://www.apple.com/es/shop/goto/accessories/apple_accessories" role="option" class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks" data-query="no keyword" data-section="defaultlinks" data-items="5" data-index="2" data-label="Accesorios" data-analytics-click="eVar23: {data-query} | {data-section} | {data-items} | {data-label} | {data-index}, events:event50">Accesorios</a>
-               </li>
-               <li class="ac-gn-searchresults-item ac-gn-searchresults-animated" role="presentation">
-                  <a href="https://www.apple.com/es/airpods/" role="option" class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks" data-query="no keyword" data-section="defaultlinks" data-items="5" data-index="3" data-label="AirPods" data-analytics-click="eVar23: {data-query} | {data-section} | {data-items} | {data-label} | {data-index}, events:event50">AirPods</a>
-               </li>
-               <li class="ac-gn-searchresults-item ac-gn-searchresults-animated" role="presentation">
-                  <a href="https://www.apple.com/es/airtag/" role="option" class="ac-gn-searchresults-link ac-gn-searchresults-link-defaultlinks" data-query="no keyword" data-section="defaultlinks" data-items="5" data-index="4" data-label="AirTag" data-analytics-click="eVar23: {data-query} | {data-section} | {data-items} | {data-label} | {data-index}, events:event50">AirTag</a>
-               </li>
-            </ul>
-            <span role="status" class="ac-gn-searchresults-count" aria-live="polite">5 Enlaces rápidos</span>
-         </div>
-      </section>
-   
-   </aside>
-            </div>
-            <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Cancelar búsqueda">
-               <span class="ac-gn-searchview-close-wrapper">
-                  <span class="ac-gn-searchview-close-left"></span>
-                  <span class="ac-gn-searchview-close-right"></span>
-               </span>
-            </button>
-         </aside>
-         <aside class="ac-gn-bagview" data-analytics-region="bag">
-            <div class="ac-gn-bagview-scrim">
-               <span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
-            </div>
-            <div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
-            </div>
-         </aside>
-      </div>
-   </nav> -->
 
-   <!-- <div class="ac-gn-blur"></div>
-   <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
-   <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div> -->
-   
-   <div class="main" role="main">
-
-      <div class="product">
-            <div class="product__name">iPhone 13 Pro</div>
-            <div class="product__description">Prodigioso Pro.</div>
+         <div class="product">
+            <div class="product__name">iPhone 13</div>
+            <div class="product__description product__description--pink-13">Tu nuevo superpoder.</div>
             <div class="product__links">
-               <a class="product__links__style" href="/es/iphone-13-pro/">Más información</a>
-               <a class="product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
+               <a class="product__links__style" href="#">Más información</a>
+               <a class="product__links__style" href="#">Comprar</a>
             </div>
             <div class="product__image">
-               <img src="../img/iphone13pro.png" class="product__image__icon" alt="iPhone 13 Pro">
+               <img src="../img/iphone13.png" class="product__image__icon" alt="iPhone 13">
             </div>
+         </div>
+
+         <div class="product">
+            <div class="product__new">Nuevo</div>
+            <div class="product__name product__name--with-logo"> 
+               <img src="../img/logo.png" class="product__name__icon" alt="apple logo">
+               <div class="product__name__nick">Watch</div>
+            </div>
+            <div class="product__serie">Series 7</div>
+            <div class="product__description">Presentamos nuestra pantalla más grande hasta la fecha.</div>
+            <div class="product__links">
+               <a class="product__links__style" href="#">Más información</a>
+               <a class="product__links__style" href="#">Comprar</a>
+            </div>
+            <div class="product__image product__image--series7">
+               <img src="../img/series7.jpg" class="product__image__icon" alt="Apple Watch Series 7">
+            </div>
+         </div>
+
+         <div class="other_products">
+            <div class="other_products__product">
+               <div class="other_products__product__name">MacBook Pro</div>
+               <div class="other_products__product__description">La potencia en estado puro.</div>
+               <div class="other_products__product__links">
+                  <a class="other_products__product__links__style" href="#">Más información</a>
+                  <a class="other_products__product__links__style" href="#">Comprar</a>
+               </div>
+               <div class="other_products__product__image other_products__product__image">
+                  <img src="../img/macbookpro.jpg" class="other_products__product__image__icon" alt="MacBook Pro">
+               </div>
+            </div>
+
+            <div class="other_products__product">
+               <div class="other_products__product__name product__name--with-logo"> 
+                  <img src="../img/logo.png" class="other_products__product__name__icon" alt="apple logo">
+                  <div class="other_products__product__name__nick">Fitness+</div>
+               </div>
+               <div class="other_products__product__description">3 meses gratis al comprar un Apple Watch.</div>
+               <div class="other_products__product__links">
+                  <a class="other_products__product__links__style" href="#">Más información</a>
+                  <a class="other_products__product__links__style" href="#">Comprar Apple Watch</a>
+               </div>
+               <div class="other_products__product__image">
+                  <img src="../img/deporte.jpg" class="other_products__product__image__icon" alt="Fitness">
+               </div>
+            </div> 
+
+            <div class="other_products__product">
+               <div class="other_products__product__name">Air Pods</div>
+               <div class="other_products__product__description">Nuevo diseño con audio espacial.</div>
+               <div class="other_products__product__links">
+                  <a class="other_products__product__links__style" href="#">Más información</a>
+                  <a class="other_products__product__links__style" href="#">Comprar</a>
+               </div>
+               <div class="other_products__product__image other_products__product__image">
+                  <img src="../img/airpods_.jpg" class="other_products__product__image__icon" alt="Air Pods">
+               </div>
+            </div>
+
+            <div class="other_products__product">
+               <div class="other_products__product__name">HomePod mini</div>
+               <div class="other_products__product__links">
+                  <a class="other_products__product__links__style" href="#">Más información</a>
+                  <a class="other_products__product__links__style" href="#">Comprar</a>
+               </div>
+               <div class="other_products__product__image other_products__product__image">
+                  <img src="../img/home.jpeg" class="other_products__product__image__icon" alt="Air Pods">
+               </div>
+            </div>
+
+            <div class="other_products__product">
+               <div class="other_products__product__name">iPad mini</div>
+               <div class="other_products__product__description">Megapotencia. Talla mini.</div>
+               <div class="other_products__product__links">
+                  <a class="other_products__product__links__style" href="#">Más información</a>
+                  <a class="other_products__product__links__style" href="#">Comprar</a>
+               </div>
+               <div class="other_products__product__image other_products__product__image">
+                  <img src="../img/ipadmini.jpg" class="other_products__product__image__icon" alt="iPad mini">
+               </div>
+            </div>
+
+            <div class="other_products__product other_products__product--background">
+               <div class="other_products__product__links other_products__product__links--appletv">
+                  <a class="other_products__product__links__style other_products__product__links__style--appletv" href="#">Ver ahora</a>
+               </div>
+            </div>
+
+         </div>
+
       </div>
-
-      <div class="product">
-         <div class="product__name">iPhone 13</div>
-         <div class="product__description product__description--pink-13">Tu nuevo superpoder.</div>
-         <div class="product__links">
-            <a class="product__links__style" href="/es/iphone-13-pro/">Más información</a>
-            <a class="product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
-         </div>
-         <div class="product__image">
-            <img src="../img/iphone13.png" class="product__image__icon" alt="iPhone 13">
-         </div>
-      </div>
-
-      <div class="product">
-         <div class="product__new">Nuevo</div>
-         <div class="product__name product__name--with-logo"> 
-            <img src="../img/logo.png" class="product__name__icon" alt="apple logo">
-            <div class="product__name__nick">Watch</div>
-         </div>
-         <div class="product__serie">Series 7</div>
-         <div class="product__description">Presentamos nuestra pantalla más grande hasta la fecha.</div>
-         <div class="product__links">
-            <a class="product__links__style" href="/es/iphone-13-pro/">Más información</a>
-            <a class="product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
-         </div>
-         <div class="product__image product__image--series7">
-            <img src="../img/series7.jpg" class="product__image__icon" alt="Apple Watch Series 7">
-         </div>
-      </div>
-
-      <div class="other_products">
-         <div class="other_products__product">
-            <div class="other_products__product__name">MacBook Pro</div>
-            <div class="other_products__product__description">La potencia en estado puro.</div>
-            <div class="other_products__product__links">
-               <a class="other_products__product__links__style" href="/es/iphone-13-pro/">Más información</a>
-               <a class="other_products__product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
-            </div>
-            <div class="other_products__product__image other_products__product__image">
-               <img src="../img/macbookpro.jpg" class="other_products__product__image__icon" alt="MacBook Pro">
-            </div>
-         </div>
-
-         <div class="other_products__product">
-            <div class="other_products__product__name product__name--with-logo"> 
-               <img src="../img/logo.png" class="other_products__product__name__icon" alt="apple logo">
-               <div class="other_products__product__name__nick">Fitness+</div>
-            </div>
-            <div class="other_products__product__description">3 meses gratis al comprar un Apple Watch.</div>
-            <div class="other_products__product__links">
-               <a class="other_products__product__links__style" href="/es/iphone-13-pro/">Más información</a>
-               <a class="other_products__product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar Apple Watch</a>
-            </div>
-            <div class="other_products__product__image">
-               <img src="../img/deporte.jpg" class="other_products__product__image__icon" alt="Fitness">
-            </div>
-         </div> 
-
-         <div class="other_products__product">
-            <div class="other_products__product__name">Air Pods</div>
-            <div class="other_products__product__description">Nuevo diseño con audio espacial.</div>
-            <div class="other_products__product__links">
-               <a class="other_products__product__links__style" href="/es/iphone-13-pro/">Más información</a>
-               <a class="other_products__product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
-            </div>
-            <div class="other_products__product__image other_products__product__image">
-               <img src="../img/airpods_.jpg" class="other_products__product__image__icon" alt="Air Pods">
-            </div>
-         </div>
-
-         <div class="other_products__product">
-            <div class="other_products__product__name">HomePod mini</div>
-            <div class="other_products__product__links">
-               <a class="other_products__product__links__style" href="/es/iphone-13-pro/">Más información</a>
-               <a class="other_products__product__links__style" href="/es/shop/goto/buy_iphone/iphone_13_pro" target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPhone 13 Pro" aria-label="Comprar el iPhone 13 Pro">Comprar</a>
-            </div>
-            <div class="other_products__product__image other_products__product__image">
-               <img src="../img/home.jpeg" class="other_products__product__image__icon" alt="Air Pods">
-            </div>
-         </div>
-
-      </div>
-
-   </div>
    
       <!-- <footer class="js" lang="es-ES" id="ac-globalfooter" data-analytics-region="global footer" role="contentinfo" aria-labelledby="ac-gf-label">
          <div class="ac-gf-content">
@@ -537,4 +386,8 @@
       </section>
    
    
-   <div id="viewport-emitter" data-viewport-emitter-dispatch="" data-viewport-emitter-state="{&quot;viewport&quot;:&quot;small&quot;,&quot;orientation&quot;:&quot;landscape&quot;,&quot;retina&quot;:true}"></div></body> -->
+   <div id="viewport-emitter" data-viewport-emitter-dispatch="" data-viewport-emitter-state="{&quot;viewport&quot;:&quot;small&quot;,&quot;orientation&quot;:&quot;landscape&quot;,&quot;retina&quot;:true}">-->
+      
+      </div>
+   </body> 
+</html>
