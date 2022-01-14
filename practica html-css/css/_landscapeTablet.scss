@@ -1,0 +1,60 @@
+$font-stack: San Francisco, sans-serif;
+$primary-color: white;
+$tittle: black;
+$product-height: 500px;
+$navbar-height: 50px;
+
+// @media (min-width: 900px) {
+
+    .mobile_navbar{
+        display: none;
+    }
+
+    .landscapeTablet_navbar{
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        height: $navbar-height;
+        width: 100%;
+        position: fixed;
+        margin: -130px 0 0 -50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 125px;
+        background-color: black;
+
+        &__logo{
+            padding-top: 6px;
+            margin-left: 50px;
+            width: 10%;
+      
+            &__icon{
+               height: 60%;
+            }
+        }
+
+        &__cesta{
+            padding-top: 6px;
+            width: 10%;
+      
+            &__icon{
+               height: 60%;
+            }
+         }
+
+        &__elem{
+            width: 10%;
+            height: 90%;
+            padding-top: 10px;
+            text-align: left;
+
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 12px;
+            }
+        }
+
+     }
+// }

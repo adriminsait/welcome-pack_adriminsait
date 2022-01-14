@@ -7,7 +7,11 @@ $navbar-height: 50px;
 //por defecto aplico las reglas establecidas para movil y modifico lo necesario 
 //para dispositivos mas grandes  --- Mobile first---
 
-.navbar{
+.landscapeTablet_navbar{
+   display: none;
+}
+
+.mobile_navbar{
    position: fixed;
    margin: -130px 0 0 -50px;
    padding-left: 50px;
@@ -348,12 +352,16 @@ $navbar-height: 50px;
 
 }
 
-
 @media (min-width: 768px) {
-   p {
-       font-size: 16px;
-       color: yellow;
-   }
+   @import 'tablet';
+}
+
+@media (min-width: 992px) {
+   @import 'landscapeTablet';
+}
+
+@media (min-width: 1200px) {
+   @import 'laptop';
 }
  
 
