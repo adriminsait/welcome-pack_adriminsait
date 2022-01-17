@@ -1,0 +1,67 @@
+$font-stack: San Francisco, sans-serif;
+$primary-color: black;
+
+* {
+    font-family: $font-stack;
+    margin: 0;
+ }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+ }
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    max-height: 45px;
+    background-color: rgb(153, 226, 255);
+    justify-content: left;
+
+    &__link{
+        width: 10%;
+        margin-top: 1.1vh;
+            padding-bottom: 1vh;
+
+        &--string{
+            
+            text-decoration: none;
+            color: $primary-color;
+            font-size: calc(5px + 1vh + 1vw);
+        }
+
+        &__icon{
+            margin-left: 2vw;
+            height: 90%;
+        }
+    }
+}
+
+.content{
+    height: 80vh;
+    max-height: 500px;
+    //background-color: rgb(94, 0, 81);
+}
+
+.footer{
+    height: 9vh;
+    background-color: rgb(153, 226, 255); ;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__link{
+        width: 10%;
+        text-decoration: none;
+        margin-top: 1vh;
+
+        &__icon{
+            height: 90%;
+            border-radius: 10%;
+        }
+    }
+}
