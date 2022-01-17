@@ -24,7 +24,7 @@ $primary-color: black;
     &__link{
         width: 10%;
         margin-top: 1.1vh;
-            padding-bottom: 1vh;
+        padding-bottom: 1vh;
 
         &--string{
             
@@ -41,9 +41,10 @@ $primary-color: black;
 }
 
 .content{
-    height: 80vh;
-    max-height: 500px;
-    //background-color: rgb(94, 0, 81);
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    //background-color: rgb(200, 247, 250);
 }
 
 .footer{
