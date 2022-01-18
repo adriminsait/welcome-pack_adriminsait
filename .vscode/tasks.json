@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "ng",
+			"path": "angular/minsait-app/",
+			"problemMatcher": [],
+			"label": "npm: ng - angular/minsait-app",
+			"detail": "ng"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "angular/minsait-app/",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: build - angular/minsait-app",
+			"detail": "ng build"
+		}
+	]
+}

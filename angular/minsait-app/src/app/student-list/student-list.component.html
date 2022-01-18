@@ -1,0 +1,32 @@
+<p>student-list works!</p>
+
+<p>the variable name exists and the value is {{ title }}</p>
+
+<!-- <input [(ngModel)]="todo"> -->
+<div [ngClass]="{'pending': !isDone, 'done': true, 'other-class-name': false}">Este ToDo es importante y está pendiente</div>
+
+<!--in template-->
+<div [ngStyle]="{'background': 'red'}">ey</div>
+
+<button (click)="onButtonClick()">Click me!</button>
+
+<div *ngIf="!isDone">
+    <p>Una directiva en bloque</p>
+</div>
+
+<ng-template [ngIf]="isDone">
+    <div>
+        <p>Contion or Variable is true and draw on DOM</p>
+    </div>
+</ng-template>
+
+<ul>
+    <li *ngFor="let avenger of avengers; let index = index">
+      Nombre del Vengador número {{index}} de nombre {{avenger}}
+    </li>
+</ul>
+
+<!-- Para hacer esto importar la clase formmodule en app.module.ts -->
+<input type="text" [ngModel]="title"> 
+
+<app-student-list-header></app-student-list-header>
