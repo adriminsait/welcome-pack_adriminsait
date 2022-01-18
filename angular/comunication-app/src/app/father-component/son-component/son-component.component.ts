@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-son-component',
   templateUrl: './son-component.component.html',
   styleUrls: ['./son-component.component.scss']
 })
-export class SonComponentComponent implements OnInit {
+export class SonComponentComponent{
+  // Recibe inputText desde la template del padre
+  @Input() inputText!: string;
 
-  constructor() { }
+  @Output() emitMessage = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  message: string = '';
+
+  sendMessage() {
+    this.emitMessage.emit(this.message);
   }
-
 }

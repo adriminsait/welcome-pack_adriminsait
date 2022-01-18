@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './father-component.component.html',
   styleUrls: ['./father-component.component.scss']
 })
-export class FatherComponentComponent implements OnInit {
+export class FatherComponentComponent {
+  // Se declara e inicia en el componente padre para luego comunicarlo al componente hijo
+  inputText: string = '';
+  // Variable donde almacenamos el valor del hijo
+  sonMessage: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  // con cada tecla apretada se activa esta funcion.
+  keyUp(letra: string) {
+    this.inputText = letra;
+  }
+  // Recibe el mensaje del hijo  
+  setMessage(message: string): void {
+    this.sonMessage = message;
   }
 
 }

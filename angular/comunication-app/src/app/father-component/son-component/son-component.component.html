@@ -1,1 +1,14 @@
-<p>son-component works!</p>
+<!-- Recibe un Input -->
+<div>
+    <h1>Son Component</h1>
+    <p>El hijo ahora escucha:</p>
+    <p>{{ inputText }}</p>
+  </div>
+
+  <!-- Emite un Output -->
+<div>
+    <h1>Envia mensaje al componente padre</h1>
+    <!-- ngModel lo iremos aprendiendo poco a poco a lo largo del curso -->
+    <input [(ngModel)]="message" />
+    <button (click)="sendMessage()">Enviar a padre</button>
+  </div>

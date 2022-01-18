@@ -1,1 +1,13 @@
-<p>father-component works!</p>
+<div>
+    <h1>Father Component</h1>
+    <input #fatherInput (keyup)="keyUp(fatherInput.value)"/>
+    <div>
+        <!-- Recibe un Input y emite un Output -->
+        <app-son-component 
+            [inputText]="inputText"
+            (emitMessage)="setMessage($event)"
+        ></app-son-component>
+        <h1>Mensaje de mi hijo ⬇️</h1>
+        <p>{{ sonMessage }}</p>
+    </div>
+</div>
