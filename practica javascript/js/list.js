@@ -1,9 +1,10 @@
 "use strict"
 
-const numberUsers = 12;
+const numberUsers = 10;
 var listUsers = [];
 
 async function generateUsers() {
+    listUsers = [];
     for(let i = 0; i < numberUsers; i++){
         await fetch('https://randomuser.me/api/')
         .then((response) => {
@@ -26,12 +27,11 @@ async function generateList(){
     try {
         await generateUsers();
 
-         console.log(listUsers[0].results[0])
-        // console.log(listUsers[0].results[0].name.first);
+        console.log(listUsers[0].results[0])
 
         var prettyList;
         prettyList = listUsers.map(person => ({
-            id: person.results[0].name.tittle + person.results[0].name.first + person.results[0].name.first,
+            id: 'u',
             name: person.results[0].name.first, 
             last: person.results[0].name.last,
             email: person.results[0].email,
@@ -39,6 +39,12 @@ async function generateList(){
             age: person.results[0].dob.age,
             photo: person.results[0].picture.large
         }));
+
+        var i = 0;
+        prettyList.forEach(user => {
+            user.id += i;
+            i++;
+        });
 
         console.log(prettyList);    
         return prettyList;
