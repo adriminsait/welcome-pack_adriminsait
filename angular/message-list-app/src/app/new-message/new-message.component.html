@@ -1,0 +1,5 @@
+<h3>Nuevo mensaje</h3>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="messageForm">
+  <label>Mensaje: <input type="text" formControlName="message" /></label>
+  <button class="button" type="submit">Crear</button>
+</form>

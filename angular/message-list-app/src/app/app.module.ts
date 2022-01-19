@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FatherComponentComponent } from './father-component/father-component.component';
-import { SonComponentComponent } from './father-component/son-component/son-component.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { MessageListComponent } from './message-list/message-list.component';
+import { NewMessageComponent } from './new-message/new-message.component';
+
+import { MessagesService } from './messages.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FatherComponentComponent,
-    SonComponentComponent
+    MessageListComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MessagesService], // Aquí proveemos nuestro servicio al módulo
   bootstrap: [AppComponent]
 })
 export class AppModule { }
