@@ -1,0 +1,7 @@
+<h2>This is the country list</h2>
+<div>
+  <h4 *ngFor="let country of (countryList | filterNames: filter)">{{ country }}</h4>
+</div>
+
+<h3>Change the filter by writing here ⬇️</h3>
+<input type="text" [(ngModel)]="filter" />

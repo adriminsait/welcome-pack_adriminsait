@@ -1,0 +1,19 @@
+<p>user-list works!</p>
+
+<div>
+    <a [routerLink]="['/user-list/1']">Usuario 1</a>
+</div>
+<div>
+    <a [routerLink]="['/user-list/2']">Usuario 2</a>
+</div>
+<div>
+    <a [routerLink]="['/user-list/3']">Usuario 3</a>
+</div>
+
+<ul>
+    <li *ngFor="let user of userList">
+      <span>{{user.name}}</span>
+      <span> - </span>
+      <a [routerLink]="['/user-list', user.id]">Ver usuario</a>
+    </li>
+  </ul>

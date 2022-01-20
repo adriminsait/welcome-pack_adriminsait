@@ -1,0 +1,51 @@
+$navbar-height: 40px;
+$color-default: rgba(85, 218, 218, 0.76);
+
+.home{
+    display:flex;
+    flex-direction: column;
+    min-height: 70vh;
+    margin: 0;
+
+    &__navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $navbar-height;
+        background-color: $color-default;
+
+        @media (min-width: 992px){
+            height: calc($navbar-height + 20px);
+        }
+    }
+
+    &__title{
+        font-size: calc(10px + 2vh + 2vw);
+        padding-left: 5%;
+        font-weight: bold;
+        margin-bottom: 3%;
+        margin-top: calc($navbar-height + 5px);
+
+        @media (min-width: 992px){
+            margin-top: calc($navbar-height + 25px);
+
+        }
+    }
+
+    //si aqui añado &__title y &__body no me lo hace, tengo que copiarlo y pegarlo 
+    //en cada css de cada hijo 
+    &__block{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15%;
+        margin-right: 10%;
+        margin-bottom: 2%;
+        min-height: calc(3vh + 3vw);
+        padding: 1%;
+        border-radius: 1.5%;
+        border-left: 3px solid $color-default;
+        border-bottom: 3px solid $color-default;
+    }
+
+}

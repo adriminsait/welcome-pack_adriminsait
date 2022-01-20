@@ -1,0 +1,27 @@
+$navbar-height: 40px;
+$color-default: rgba(85, 218, 218, 0.76);
+
+.list{
+    display:flex;
+    flex-direction: column;
+    min-height: 70vh;
+    margin: 0;
+
+    &__navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $navbar-height;
+        background-color: $color-default;
+
+        @media (min-width: 992px){
+            height: calc($navbar-height + 20px);
+        }
+    }
+
+    &__spacer{
+        
+    }
+
+}

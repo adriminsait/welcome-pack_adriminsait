@@ -1,0 +1,30 @@
+.home__navbar{
+    &__elements{
+        display: flex;
+        flex-direction: row;
+        margin-top: 7px;
+        margin-left: 5%;
+        font-size: 15px;
+
+        @media (min-width: 992px){
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        &__link{
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin-right: 5%;
+            padding: 3px;
+            color: black;
+
+            &:hover{
+                color: rgb(0, 90, 94);
+                text-decoration: solid underline white 2px;
+            }
+        }
+    }
+
+
+}
