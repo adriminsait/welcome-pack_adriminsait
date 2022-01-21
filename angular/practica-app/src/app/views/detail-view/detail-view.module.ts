@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponentComponent } from './list-component/list-component.component';
-
-import { FormsModule } from '@angular/forms';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { DetailComponentComponent } from './detail-component/detail-component.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
   declarations: [
-    ListComponentComponent
+    DetailComponentComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CommonModule,
     FormsModule,
-    SharedModule, 
+    SharedModule,
     RouterModule
   ],
-  providers: [
-  ],
   exports:[
-    ListComponentComponent
+    DetailComponentComponent
+  ],
+  providers: [
   ]
 })
-export class ListViewModule { }
+export class DetailViewModule { }

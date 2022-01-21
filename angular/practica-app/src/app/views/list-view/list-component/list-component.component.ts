@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterResponseInterface, CharacterInterface } from './models/character';
-import { ApiCallService } from './services/api-call.service';
+import { CharacterInterface } from 'src/app/shared/api-call-shared/models/character';
+import { ApiCallService } from 'src/app/shared/api-call-shared/services/api-call.service';
+
 
 @Component({
   selector: 'app-list-component',
@@ -9,23 +10,16 @@ import { ApiCallService } from './services/api-call.service';
 })
 export class ListComponentComponent implements OnInit {
 
-  characterList: CharacterInterface[];
+  characterList: CharacterInterface[] = [];
 
-  constructor(private apiCall: ApiCallService) {
-    this.characterList = [];
-  }
+  constructor(private apiCall: ApiCallService) {}
 
   ngOnInit() {
-    // Utilizamos la función getCharacters para guardar nuestros resultados:
-    this.apiCall.getCharacters().subscribe((data: CharacterResponseInterface) => {
-      const results: CharacterInterface[] = data.results;
-
-      const formattedResults = results.map(({ id, name, image }) => ({
-        id,
-        name,
-        image,
-      }));
-      this.characterList = formattedResults;
+    this.apiCall.getCharacters().subscribe((res) => {
+      this.characterList = res;
+      console.log(this.characterList);
+    }, (err) => {
+      console.error(err);
     });
   }
 

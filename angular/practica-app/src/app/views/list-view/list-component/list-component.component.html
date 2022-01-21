@@ -1,10 +1,13 @@
 <div class="list">
     <div class="list__navbar">
-        <app-navbar-component></app-navbar-component>
+      <app-navbar-component></app-navbar-component>
     </div>
     <div class="list__spacer"></div>
-    <div class="list__character">
-        
+    <div class="list__list" *ngIf="characterList">
+      <div class="list__list__character" *ngFor="let character of characterList">
+        <img class="list__list__character__icon" [src]="character.image" [alt]="character.name">
+        <a [routerLink]="['/list', character.id]" class="list__list__character__name">{{ character.name }}</a>
+      </div>
     </div>
 </div>
 

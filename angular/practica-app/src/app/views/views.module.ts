@@ -5,7 +5,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ListViewModule } from './list-view/list-view.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiCallService } from './list-view/list-component/services/api-call.service';
+import { RouterModule } from '@angular/router';
+import { DetailViewModule } from './detail-view/detail-view.module';
 
 
 @NgModule({
@@ -16,14 +17,16 @@ import { ApiCallService } from './list-view/list-component/services/api-call.ser
     CommonModule,
     HomeViewModule,
     ListViewModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
+    DetailViewModule
   ],
   providers: [
-    ApiCallService
   ],
   exports: [
     HomeViewModule,
-    ListViewModule
+    ListViewModule,
+    DetailViewModule
   ]
 })
 export class ViewsModule { }
