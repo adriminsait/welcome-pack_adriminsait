@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { CharacterInterface, CharacterResponseInterface } from '../models/character';
 import { map, catchError } from 'rxjs';
 
-const url = 'https://rickandmortyapi.com/api/character';
+const url = 'https://rickandmortyapi.com/api/character/';
 
 @Injectable()
 export class ApiCallService {
@@ -31,7 +31,19 @@ export class ApiCallService {
   }
 
   getCharacterById(id: number){
-    return this.characterList[id];
+    var urlId = url + id;
+    return this.http.get(urlId).pipe(
+      map((res: CharacterInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to access de API for character ' + id);
+        } else {
+          return res;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
   }
   
 }

@@ -9,34 +9,33 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail-component.component.scss']
 })
 export class DetailComponentComponent implements OnInit {
-  userId: string;
+  characterId: string;
   character: CharacterInterface;
 
   constructor(private route: ActivatedRoute, private apiCall: ApiCallService) {
-    this.userId = "";
+    this.characterId = "";
     this.character = {
-      id: -13,
+      id: -1,
       name: "",
       image: "",
+      species: "",
+      gender: "",
+      status: "",
+      origin:{
+        name: ""
+      }
     };
   }
 
   ngOnInit() {
-    const obsUno: Observable<any> = this.httpClient.get(this.urlPeticionUno);
-    const obsDos: Observable<any> = this.httpClient.get(this.urlPeticionDos);
-
     this.route.paramMap.subscribe(params => {
-      this.userId = params.get('characterId')!;
-      var idN = parseInt(this.userId);
-      this.character = this.apiCall.getCharacterById(idN);
-      if(this.character === undefined){
-        this.apiCall.getCharacters().subscribe((res) => {
-          this.character = res[idN];
-        }, (err) => {
-          console.error(err);
-        });
-      }
-      console.log(this.character);
+      this.characterId = params.get('characterId')!;
+      var idN = parseInt(this.characterId);
+      this.apiCall.getCharacterById(idN).subscribe((res) => {
+        this.character = res;
+      }, (err) => {
+        console.error(err);
+      });
     });
   }
 

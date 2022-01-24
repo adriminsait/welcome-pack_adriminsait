@@ -6,12 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-
+import { ProfileComponent } from './detail-component/profile/profile.component';
+import { InfoComponent } from './detail-component/info/info.component';
+import { AliveComponent } from './detail-component/alive/alive.component';
 
 
 @NgModule({
   declarations: [
-    DetailComponentComponent
+    DetailComponentComponent,
+    ProfileComponent,
+    InfoComponent,
+    AliveComponent
   ],
   imports: [
     BrowserModule,

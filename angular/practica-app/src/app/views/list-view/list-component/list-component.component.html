@@ -3,12 +3,11 @@
       <app-navbar-component></app-navbar-component>
     </div>
     <div class="list__spacer"></div>
+    <div class="list__find">Buscar personaje:</div>
+    <input class="list__input" type="text" [(ngModel)]="filter" />
     <div class="list__list" *ngIf="characterList">
-      <div class="list__list__character" *ngFor="let character of characterList">
-        <img class="list__list__character__icon" [src]="character.image" [alt]="character.name">
-        <a [routerLink]="['/list', character.id]" class="list__list__character__name">{{ character.name }}</a>
+      <div class="list__list__character" *ngFor="let character of ((characterList | filterLength : length) | filterName: filter)">
+        <app-card [inputCharacter]="character"></app-card>
       </div>
     </div>
 </div>
-
-<!-- https://rickandmortyapi.com/api/character -->

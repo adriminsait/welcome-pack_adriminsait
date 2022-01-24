@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { DetailViewModule } from './detail-view/detail-view.module';
+import { ListPipesModule } from './list-view/list-pipes.module';
 
 
 @NgModule({
@@ -19,14 +20,16 @@ import { DetailViewModule } from './detail-view/detail-view.module';
     ListViewModule,
     SharedModule,
     RouterModule,
-    DetailViewModule
+    DetailViewModule,
+    ListPipesModule
   ],
   providers: [
   ],
   exports: [
     HomeViewModule,
     ListViewModule,
-    DetailViewModule
+    DetailViewModule,
+    ListPipesModule
   ]
 })
 export class ViewsModule { }

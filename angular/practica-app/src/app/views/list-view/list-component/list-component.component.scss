@@ -28,6 +28,21 @@ $color-default: rgba(85, 218, 218, 0.76);
         }
     }
 
+    &__find{
+        margin-left: 15%;
+        margin-right: 25%;
+        height: calc(2vh + 2vw);
+        font-size: calc(5px + 1vh + 1vw);
+    }
+
+    &__input{
+        margin-left: 15%;
+        margin-right: 25%;
+        height: calc(1vh + 1vw);
+        font-size: calc(5px + 0.6vh + 0.6vw);
+        border-color: $color-default;
+    }
+
     &__list{
         margin-left: 20%;
         margin-right: 20%;
@@ -40,35 +55,13 @@ $color-default: rgba(85, 218, 218, 0.76);
             background-color: rgba(210, 255, 255, 0.76);
             margin: 5px;
             border-radius: 1%;
-
-            &__icon{
-                height: 90%;
-                border-radius: 4%;
-                margin: 2%;
-
-                @media (min-width: 992px){
-                    margin-left: 10px;
-                    margin-top: 8px;
-                }
-            }
-
-            &__name{
-                text-decoration: none;
-                color: black;
-                font-size: calc(10px + 1vh + 1vw);
-                margin-left: 5%;
-                margin-top: 10%;
-                margin-bottom: 20%;
-
-                &:hover{
-                    color: rgb(0, 90, 94);
-                }
-
-                @media (min-width: 992px){
-                    margin-top: 50px;
-                }
-            }
         }
     }
 
+}
+
+app-card{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
 }

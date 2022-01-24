@@ -1,0 +1,11 @@
+<div class="detail__character__status">
+    <div class="detail__character__status__title">Estado:</div>
+    <div *ngIf="isAlive(); else elseBlock1" class="detail__character__status__alive"></div>
+    <ng-template #elseBlock1>
+        <div *ngIf="isDead(); else elseBlock2" class="detail__character__status__dead"></div>
+        <ng-template #elseBlock2>
+            <div class="detail__character__status__unknown"></div>
+        </ng-template>
+    </ng-template>
+    <div class="detail__character__status__status">{{ inputStatus }}</div>
+</div>
