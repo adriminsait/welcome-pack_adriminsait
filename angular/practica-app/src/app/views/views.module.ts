@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { DetailViewModule } from './detail-view/detail-view.module';
 import { ListPipesModule } from './list-view/list-pipes.module';
 import { CreateViewModule } from './create-view/create-view.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyCharactersViewModule } from './my-characters-view/my-characters-view.module';
 
 
 @NgModule({
@@ -18,11 +20,14 @@ import { CreateViewModule } from './create-view/create-view.module';
     HttpClientModule,
     RouterModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     HomeViewModule,
     ListViewModule,
     DetailViewModule,
     CreateViewModule,
+    MyCharactersViewModule,
     SharedModule,
     ListPipesModule
   ],
@@ -33,6 +38,7 @@ import { CreateViewModule } from './create-view/create-view.module';
     ListViewModule,
     DetailViewModule,
     CreateViewModule,
+    MyCharactersViewModule,
     ListPipesModule
   ]
 })

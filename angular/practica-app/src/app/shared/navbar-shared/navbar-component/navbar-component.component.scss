@@ -12,7 +12,7 @@
 
     &__link{
         width: 10%;
-        text-align: left;
+        text-align: center;
         text-decoration: none;
         // margin-right: 5%;
         padding: 3px;
@@ -24,7 +24,8 @@
         }
 
         &--big{
-            width: 30%;
+            width: 25%;
+            max-width: 180px;
         }
     }
 }

@@ -6,42 +6,15 @@ import { map, catchError, Observable, forkJoin } from 'rxjs';
 const urlOri = 'http://localhost:3000/charactersOriginals/';
 const urlNew = 'http://localhost:3000/charactersNews/';
 
+//los nuevos empiezan a partir del id 10000
+const idNews = 10000;
+
 @Injectable()
 export class ApiCallService {
   characterList: CharacterInterface[];
-  obsOri: Observable<any>;
-  obsNew: Observable<any>;
-  joinedObservable: Observable<any>;
 
   constructor(private http: HttpClient) {
     this.characterList = [];
-    this.obsOri = this.http.get(urlOri).pipe(
-        map((res: CharacterResponseInterface | any) => {
-          if (!res) {
-            throw new Error('Error trying to access de API **ORIGINAL**');
-          } else {
-            const results: CharacterInterface[] = res;
-            return results;
-          }
-        }),
-        catchError(err => {
-          throw new Error(err.message);
-        })
-      );
-    this.obsNew = this.http.get(urlNew).pipe(
-      map((res: CharacterResponseInterface | any) => {
-        if (!res) {
-          throw new Error('Error trying to access de API **NEW**');
-        } else {
-          const results: CharacterInterface[] = res;
-          return results;
-        }
-      }),
-      catchError(err => {
-        throw new Error(err.message);
-      })
-    );
-    this.joinedObservable = forkJoin([this.obsOri, this.obsNew]);
   }
 
   getCharacters() {
@@ -60,8 +33,42 @@ export class ApiCallService {
     //     throw new Error(err.message);
     //   })
     // );
+    
+    var obsOri: Observable<any>;
+    var obsNew: Observable<any>;
+    var joinedObservable: Observable<any>;
 
-    return this.joinedObservable;
+    obsOri = this.http.get(urlOri).pipe(
+      map((res: CharacterResponseInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to access the API **ORIGINAL**');
+        } else {
+          const results: CharacterInterface[] = res;
+          return results;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+
+    obsNew = this.http.get(urlNew).pipe(
+      map((res: CharacterResponseInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to access the API **NEW**');
+        } else {
+          const results: CharacterInterface[] = res;
+          return results;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+
+    joinedObservable = forkJoin([obsOri, obsNew]);
+
+    return joinedObservable;
   }
 
   getCharacterById(id: number){
@@ -72,10 +79,11 @@ export class ApiCallService {
     else{
       urlId = urlNew + id;
     }
+    
     return this.http.get(urlId).pipe(
       map((res: CharacterInterface | any) => {
         if (!res) {
-          throw new Error('Error trying to access de API **ORIGINAL** for character ' + id);
+          throw new Error('Error trying to access the API **ORIGINAL** for character ' + id);
         } else {
           return res;
         }
@@ -86,6 +94,35 @@ export class ApiCallService {
     );
   }
 
+  createCharacter(character: CharacterInterface){
+
+    return this.http.get(urlNew).pipe(
+      map((res: CharacterResponseInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to access the API **NEW**');
+        } else {
+          const numCharacters = res.length;
+          var idN = idNews + numCharacters;
+          character.id = idN;
+          return this.http.post(urlNew, character).pipe(
+            map((res: CharacterInterface | any) => {
+              if (!res) {
+                throw new Error('Error trying to POST character ');
+              } else {
+                return res;
+              }
+            }),
+            catchError(err => {
+              throw new Error(err.message);
+            })
+          );
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+  }
 
   
 }

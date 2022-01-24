@@ -6,12 +6,14 @@ import { DetailComponentComponent } from './views/detail-view/detail-component/d
 
 import { HomeComponentComponent } from './views/home-view/home-component/home-component.component';
 import { ListComponentComponent } from './views/list-view/list-component/list-component.component';
+import { MyCharactersComponentComponent } from './views/my-characters-view/my-characters-component/my-characters-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponentComponent},
   { path: 'list', component: ListComponentComponent},
   { path: 'list/:characterId', component: DetailComponentComponent},
+  { path: 'myCharacters', component: MyCharactersComponentComponent},
   { path: 'createCharacter', component: CreateComponentComponent}
 ];
 

@@ -30,9 +30,4 @@ export class ListComponentComponent implements OnInit {
       console.error(err);
     });
   }
-
-  // onChangeFilter(filter: string){
-  //   this.filteredList = this.characterList.filter(el => el.name.toLowerCase().includes(filter.trim().toLowerCase()));
-  // }
-
 }

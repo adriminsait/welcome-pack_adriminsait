@@ -2,40 +2,71 @@
     <div class="create__navbar">
         <app-navbar-component></app-navbar-component>
     </div>
-    <div class="create__spacer"></div>
 
+    <div class="create__spacer"></div>
     <div class="create__title">Crea tu personaje</div>
-    <div class="create__field">
-        <div class="create__field__name">Nombre:</div>
-        <input class="create__field__input" type="text" [(ngModel)]="character.name">
-    </div>
-    <div class="create__field">
-        <div class="create__field__name">URL de su foto:</div>
-        <input class="create__field__input" type="text" [(ngModel)]="character.image">
-    </div>
-    <div class="create__field">
-        <div class="create__field__name">Género:</div>
-        <input class="create__field__input" type="text" [(ngModel)]="character.gender">
-    </div>
-    <div class="create__field">
-        <div class="create__field__name">Especie:</div>
-        <input class="create__field__input" type="text" [(ngModel)]="character.species">
-    </div>
-    <div class="create__field">
-        <div class="create__field__name">Origen:</div>
-        <input class="create__field__input" type="text" [(ngModel)]="character.origin.name">
-    </div>
-    <div class="create__field">
-        <div class="create__field__name">Estado:</div>
-        <select class="create__field__input" [(ngModel)]="character.status">
-            <option value="Alive">Vivo</option>
-            <option value="Dead">Muerto</option>
-            <option value="Unknown">Desconocido</option>
-        </select>
-    </div>
-    <p>
-        <button (click)="this.createCharacter()">Guardar</button>
-    </p>
+
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="createForm">
+        <fieldset class="create__field">
+            <label for="name" class="create__field__name">*Nombre:</label>
+            <input class="create__field__input" type="text" id="name" formControlName="name" />
+            <div class="create__field__error"
+                *ngIf="!createForm.get('name')!.valid && (createForm.get('name')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </fieldset>
+        
+        <fieldset class="create__field">
+            <label for="image" class="create__field__name">*URL de la foto:</label>
+            <input  class="create__field__input"type="text" id="image" formControlName="image" />
+            <div class="create__field__error"
+                *ngIf="!createForm.get('image')!.valid && (createForm.get('image')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </fieldset>
+      
+        <fieldset class="create__field">
+            <label for="species" class="create__field__name">*Especie:</label>
+            <input class="create__field__input" type="text" id="species" formControlName="species" />
+            <div class="create__field__error"
+                *ngIf="!createForm.get('species')!.valid && (createForm.get('species')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </fieldset>
+
+        <fieldset class="create__field">
+            <label for="gender" class="create__field__name">*Género:</label>
+            <input  class="create__field__input" type="text" id="gender" formControlName="gender" />
+            <div class="create__field__error"
+                *ngIf="!createForm.get('gender')!.valid && (createForm.get('gender')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </fieldset>
+
+        <fieldset class="create__field">
+            <label for="origin" class="create__field__name">*Origen:</label>
+            <input class="create__field__input" type="text" id="origin" formControlName="origin" />
+            <div class="create__field__error"
+                *ngIf="!createForm.get('origin')!.valid && (createForm.get('origin')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </fieldset>
+
+        <div class="create__field">
+            <label for="status" class="create__field__name">*Estado:</label>
+            <select class="create__field__input create__field__input--selector" formControlName="status">
+                <option *ngFor="let stat of status" [ngValue]="stat"> {{ stat }}</option>
+            </select>
+            <div class="create__field__error"
+                *ngIf="!createForm.get('status')!.valid && (createForm.get('status')!.dirty || submitted)">
+                Campo obligatorio
+            </div>
+        </div>
+      
+        <button class="create__button" type="submit" [disabled]="!createForm.valid">Submit</button>
+      
+      </form>
+
     <div class="create__footer">
         <app-footer-component></app-footer-component>
     </div>
