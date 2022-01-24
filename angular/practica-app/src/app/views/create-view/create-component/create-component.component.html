@@ -1,0 +1,43 @@
+<div class="create">
+    <div class="create__navbar">
+        <app-navbar-component></app-navbar-component>
+    </div>
+    <div class="create__spacer"></div>
+
+    <div class="create__title">Crea tu personaje</div>
+    <div class="create__field">
+        <div class="create__field__name">Nombre:</div>
+        <input class="create__field__input" type="text" [(ngModel)]="character.name">
+    </div>
+    <div class="create__field">
+        <div class="create__field__name">URL de su foto:</div>
+        <input class="create__field__input" type="text" [(ngModel)]="character.image">
+    </div>
+    <div class="create__field">
+        <div class="create__field__name">Género:</div>
+        <input class="create__field__input" type="text" [(ngModel)]="character.gender">
+    </div>
+    <div class="create__field">
+        <div class="create__field__name">Especie:</div>
+        <input class="create__field__input" type="text" [(ngModel)]="character.species">
+    </div>
+    <div class="create__field">
+        <div class="create__field__name">Origen:</div>
+        <input class="create__field__input" type="text" [(ngModel)]="character.origin.name">
+    </div>
+    <div class="create__field">
+        <div class="create__field__name">Estado:</div>
+        <select class="create__field__input" [(ngModel)]="character.status">
+            <option value="Alive">Vivo</option>
+            <option value="Dead">Muerto</option>
+            <option value="Unknown">Desconocido</option>
+        </select>
+    </div>
+    <p>
+        <button (click)="this.createCharacter()">Guardar</button>
+    </p>
+    <div class="create__footer">
+        <app-footer-component></app-footer-component>
+    </div>
+</div>
+

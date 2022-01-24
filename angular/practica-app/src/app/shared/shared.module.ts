@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiCallService } from './api-call-shared/services/api-call.service';
 import { NavbarSharedModule } from './navbar-shared/navbar-shared.module';
+import { FooterSharedModule } from './footer-shared/footer-shared.module';
 
 @NgModule({
   declarations: [],
@@ -16,7 +17,8 @@ import { NavbarSharedModule } from './navbar-shared/navbar-shared.module';
     ApiCallService
   ],
   exports: [
-    NavbarSharedModule
+    NavbarSharedModule,
+    FooterSharedModule
   ]
 })
 export class SharedModule { }

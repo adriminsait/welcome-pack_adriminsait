@@ -1,0 +1,33 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-left: 5%;
+    // font-size: calc(6px + 0.4vw + 0.4vh);
+    font-size: 10px;
+
+    @media (min-width: 992px){
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
+    &__motivation{
+        width: 70%;
+        text-align: justify;
+    }
+
+    &__repo{
+        width: 20%;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 5%;
+        margin-top: 10px;
+        padding: 3px;
+        color: black;
+
+        &:hover{
+            color: rgb(0, 90, 94);
+            text-decoration: solid underline white 2px;
+        }
+    }
+}

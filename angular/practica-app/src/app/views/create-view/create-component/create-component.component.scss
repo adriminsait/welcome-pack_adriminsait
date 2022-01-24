@@ -1,0 +1,77 @@
+$navbar-height: 40px;
+$footer-height: 50px;
+$color-default: rgba(85, 218, 218, 0.76);
+
+.create{
+    display:flex;
+    flex-direction: column;
+    min-height: 70vh;
+    margin: 0;
+
+    &__navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $navbar-height;
+        background-color: $color-default;
+
+        @media (min-width: 992px){
+            height: calc($navbar-height + 20px);
+        }
+    }
+
+    &__spacer{
+        height: $navbar-height;
+
+        @media (min-width: 992px){
+            height: calc($navbar-height + 20px);
+        }
+    }
+
+    &__title{
+        height: calc(4vh + 4vw);
+        max-height: 50px;
+        font-size: calc(10px + 1vh + 1vw);
+        margin-left: 5%;
+        font-weight: bold;
+        text-decoration: solid underline rgb(2, 147, 155) 2px;
+    }
+
+    &__field{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: flex-end;
+        height: calc(4vh + 4vw);
+        max-height: 50px;
+        margin: 5px;
+        margin-left: 5%;
+        margin-right: 10%;
+        
+        &__name{
+            width: 30%;
+            max-width: 200px;
+            font-size: calc(10px + 0.6vh + 0.6vw);
+            // margin: 1%;
+        }
+
+        &__input{
+            width: 65%;
+            //height: calc(1vh + 1vw);
+            font-size: calc(5px + 0.6vh + 0.6vw);
+            border-color: $color-default;
+            // margin: 1%;
+        }
+    }
+
+    &__footer{
+        height: $footer-height;
+        background-color: rgba(224, 235, 235, 0.7);
+
+        @media (min-width: 992px){
+            height: calc($footer-height + 10px);
+        }
+    }
+
+}

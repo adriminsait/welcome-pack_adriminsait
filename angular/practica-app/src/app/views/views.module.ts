@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { DetailViewModule } from './detail-view/detail-view.module';
 import { ListPipesModule } from './list-view/list-pipes.module';
+import { CreateViewModule } from './create-view/create-view.module';
 
 
 @NgModule({
@@ -15,12 +16,14 @@ import { ListPipesModule } from './list-view/list-pipes.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
     CommonModule,
+
     HomeViewModule,
     ListViewModule,
-    SharedModule,
-    RouterModule,
     DetailViewModule,
+    CreateViewModule,
+    SharedModule,
     ListPipesModule
   ],
   providers: [
@@ -29,6 +32,7 @@ import { ListPipesModule } from './list-view/list-pipes.module';
     HomeViewModule,
     ListViewModule,
     DetailViewModule,
+    CreateViewModule,
     ListPipesModule
   ]
 })

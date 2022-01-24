@@ -19,7 +19,6 @@ export class InfoComponent implements OnInit {
       "en los que se encuentran con vida extraterrestre y diferentes problemas.",
       "La serie es sarcástica, extravagante y absurda."
     ]
-    console.log(this.body);
   }
 
   ngOnInit(): void {

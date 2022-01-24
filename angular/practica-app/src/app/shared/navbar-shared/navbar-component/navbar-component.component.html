@@ -1,8 +1,11 @@
-<div class="home__navbar__elements">
-    <a class="home__navbar__elements__link" [routerLink]="['/home']">
+<div class="navbar">
+    <a class="navbar__link" [routerLink]="['/home']">
         Inicio
     </a>
-    <a [routerLink]="['/list']" class="home__navbar__elements__link">
+    <a [routerLink]="['/list']" class="navbar__link">
         Lista
+    </a>
+    <a [routerLink]="['/createCharacter']" class="navbar__link navbar__link--big">
+        Crear personaje
     </a>
 </div>

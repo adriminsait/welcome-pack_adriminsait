@@ -14,7 +14,7 @@ import { ListPipesModule } from './list-pipes.module';
 @NgModule({
   declarations: [
     ListComponentComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     BrowserModule,
