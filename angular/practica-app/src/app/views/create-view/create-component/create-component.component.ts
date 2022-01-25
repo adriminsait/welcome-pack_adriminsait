@@ -28,7 +28,7 @@ export class CreateComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  async onSubmit(){
     this.submitted = true;
     if (this.createForm.valid) {
       const character = {
@@ -41,7 +41,9 @@ export class CreateComponentComponent implements OnInit {
           name: this.createForm.get('origin')!.value,
         }
       };
-      this.apiCall.createCharacter(character).subscribe( result => {
+      
+      var aux = await this.apiCall.createCharacter(character);
+      aux.subscribe( result => {
           
       } );
       this.createForm.reset();

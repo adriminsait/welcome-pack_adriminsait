@@ -767,15 +767,26 @@
       "id": 4
     },
     {
-      "name": "Fulgora",
-      "image": "https://rickandmortyapi.com/api/character/avatar/129.jpeg",
-      "species": "Human",
-      "gender": "Female",
-      "status": "Alive",
+      "name": "aa",
+      "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg",
+      "species": "vvvvv",
+      "gender": "aa",
+      "status": "Dead",
       "origin": {
-        "name": "Earth"
+        "name": "aa"
       },
       "id": 5
+    },
+    {
+      "name": "ss",
+      "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg",
+      "species": "ss",
+      "gender": "ss",
+      "status": "Alive",
+      "origin": {
+        "name": "ss"
+      },
+      "id": 6
     }
   ]
 }

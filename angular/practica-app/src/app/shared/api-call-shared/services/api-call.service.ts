@@ -102,7 +102,7 @@ export class ApiCallService {
     );
   }
 
-  createCharacter(character: Object){
+  async createCharacter(character: Object){
     return this.http.post(urlNew, character).pipe(
       map((res: CharacterInterface | any) => {
         if (!res) {
@@ -117,7 +117,7 @@ export class ApiCallService {
     );
   }
 
-  deleteCharacter(id: Object){
+  async deleteCharacter(id: Object){
     var urlId: string = urlNew + id;
 
     return this.http.delete(urlId).pipe(
@@ -134,7 +134,7 @@ export class ApiCallService {
     );
   }
 
-  updateCharacter(character: CharacterInterface){
+  async updateCharacter(character: CharacterInterface){
     var urlId: string = urlNew + character.id;
 
     return this.http.patch(urlId, character).pipe(

@@ -57,8 +57,9 @@ export class MyCharacterDetailComponentComponent implements OnInit {
     });
   }
 
-  deleteCharacter(){
-    this.apiCall.deleteCharacter(this.character.id).subscribe((res) => {
+  async deleteCharacter(){
+    var aux = await this.apiCall.deleteCharacter(this.character.id);
+    aux.subscribe((res) => {
       
     }, (err) => {
       console.error(err);
@@ -78,7 +79,7 @@ export class MyCharacterDetailComponentComponent implements OnInit {
     });
   }
 
-  updateCharacter(){
+  async updateCharacter(){
     console.log("hola");
 
     this.character = {
@@ -93,8 +94,9 @@ export class MyCharacterDetailComponentComponent implements OnInit {
       }
     };
 
-    this.apiCall.updateCharacter(this.character).subscribe((res) => {
-      console.log(res);
+    var aux = await this.apiCall.updateCharacter(this.character);
+    aux.subscribe((res) => {
+      
     }, (err) => {
       console.error(err);
     });
