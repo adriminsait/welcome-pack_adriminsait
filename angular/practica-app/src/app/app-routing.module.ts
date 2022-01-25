@@ -6,6 +6,7 @@ import { DetailComponentComponent } from './views/detail-view/detail-component/d
 
 import { HomeComponentComponent } from './views/home-view/home-component/home-component.component';
 import { ListComponentComponent } from './views/list-view/list-component/list-component.component';
+import { MyCharacterDetailComponentComponent } from './views/my-character-detail/my-character-detail-component/my-character-detail-component.component';
 import { MyCharactersComponentComponent } from './views/my-characters-view/my-characters-component/my-characters-component.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'list', component: ListComponentComponent},
   { path: 'list/:characterId', component: DetailComponentComponent},
   { path: 'myCharacters', component: MyCharactersComponentComponent},
+  { path: 'myCharacters/:characterId', component: MyCharacterDetailComponentComponent},
   { path: 'createCharacter', component: CreateComponentComponent}
 ];
 

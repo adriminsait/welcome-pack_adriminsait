@@ -6,9 +6,6 @@ import { map, catchError, Observable, forkJoin } from 'rxjs';
 const urlOri = 'http://localhost:3000/charactersOriginals/';
 const urlNew = 'http://localhost:3000/charactersNews/';
 
-//los nuevos empiezan a partir del id 10000
-const idNews = 10000;
-
 @Injectable()
 export class ApiCallService {
   characterList: CharacterInterface[];
@@ -72,14 +69,8 @@ export class ApiCallService {
   }
 
   getCharacterById(id: number){
-    var urlId: string;
-    if(id < 100){
-      urlId = urlOri + id;
-    }
-    else{
-      urlId = urlNew + id;
-    }
-    
+    var urlId = urlOri + id;
+   
     return this.http.get(urlId).pipe(
       map((res: CharacterInterface | any) => {
         if (!res) {
@@ -94,28 +85,80 @@ export class ApiCallService {
     );
   }
 
-  createCharacter(character: CharacterInterface){
-
+  getMyCharacters(){
     return this.http.get(urlNew).pipe(
       map((res: CharacterResponseInterface | any) => {
         if (!res) {
           throw new Error('Error trying to access the API **NEW**');
         } else {
-          const numCharacters = res.length;
-          var idN = idNews + numCharacters;
-          character.id = idN;
-          return this.http.post(urlNew, character).pipe(
-            map((res: CharacterInterface | any) => {
-              if (!res) {
-                throw new Error('Error trying to POST character ');
-              } else {
-                return res;
-              }
-            }),
-            catchError(err => {
-              throw new Error(err.message);
-            })
-          );
+          const results: CharacterInterface[] = res;
+          return results;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+  }
+
+  getMyCharacterById(id: number){
+    var urlId: string = urlNew + id;
+    
+    return this.http.get(urlId).pipe(
+      map((res: CharacterInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to access the API **NEW** for character ' + id);
+        } else {
+          return res;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+  }
+
+  createCharacter(character: Object){
+    return this.http.post(urlNew, character).pipe(
+      map((res: CharacterInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to POST character ');
+        } else {
+          return res;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+  }
+
+  deleteCharacter(id: Object){
+    var urlId: string = urlNew + id;
+
+    return this.http.delete(urlId).pipe(
+      map((res: CharacterInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to deleting character ' + id);
+        } else {
+          return res;
+        }
+      }),
+      catchError(err => {
+        throw new Error(err.message);
+      })
+    );
+  }
+
+  updateCharacter(character: CharacterInterface){
+    var urlId: string = urlNew + character.id;
+
+    return this.http.patch(urlId, character).pipe(
+      map((res: CharacterInterface | any) => {
+        if (!res) {
+          throw new Error('Error trying to updating character ' + character.id);
+        } else {
+          return res;
         }
       }),
       catchError(err => {

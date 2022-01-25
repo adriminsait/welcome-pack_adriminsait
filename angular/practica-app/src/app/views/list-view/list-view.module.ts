@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './list-component/card/card.component';
 import { ListPipesModule } from './list-pipes.module';
+import { CardMyCharacterComponent } from './list-component/card-my-character/card-my-character.component';
 
 
 @NgModule({
   declarations: [
     ListComponentComponent,
     CardComponent,
+    CardMyCharacterComponent,
   ],
   imports: [
     BrowserModule,

@@ -711,7 +711,7 @@
   ],
   "charactersNews": [
     {
-      "id": 10001,
+      "id": 1,
       "name": "Artist Morty",
       "status": "Alive",
       "species": "Human",
@@ -734,7 +734,7 @@
       "created": "2017-11-05T08:59:07.457Z"
     },
     {
-      "id": 10002,
+      "id": 2,
       "name": "aa",
       "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg",
       "species": "sss",
@@ -743,6 +743,39 @@
       "origin": {
         "name": "ss"
       }
+    },
+    {
+      "name": "Fulgora",
+      "image": "https://rickandmortyapi.com/api/character/avatar/129.jpeg",
+      "species": "Human",
+      "gender": "Female",
+      "status": "Alive",
+      "origin": {
+        "name": "Earth"
+      },
+      "id": 4
+    },
+    {
+      "name": "Fulgora",
+      "image": "https://rickandmortyapi.com/api/character/avatar/129.jpeg",
+      "species": "Human",
+      "gender": "Female",
+      "status": "Alive",
+      "origin": {
+        "name": "Earth"
+      },
+      "id": 4
+    },
+    {
+      "name": "Fulgora",
+      "image": "https://rickandmortyapi.com/api/character/avatar/129.jpeg",
+      "species": "Human",
+      "gender": "Female",
+      "status": "Alive",
+      "origin": {
+        "name": "Earth"
+      },
+      "id": 5
     }
   ]
 }

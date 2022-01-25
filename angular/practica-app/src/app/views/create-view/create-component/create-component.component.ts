@@ -31,8 +31,7 @@ export class CreateComponentComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if (this.createForm.valid) {
-      const character: CharacterInterface = {
-        id: -1,
+      const character = {
         name: this.createForm.get('name')!.value,
         image: this.createForm.get('image')!.value,
         species: this.createForm.get('species')!.value,
@@ -43,9 +42,7 @@ export class CreateComponentComponent implements OnInit {
         }
       };
       this.apiCall.createCharacter(character).subscribe( result => {
-          result.subscribe(res => {
-            console.log(res);
-          })
+          console.log(result);
         } );
       this.createForm.reset();
       this.submitted = false;

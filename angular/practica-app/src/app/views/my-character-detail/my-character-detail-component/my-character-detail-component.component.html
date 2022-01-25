@@ -1,0 +1,79 @@
+<div class="detail">
+    <div class="detail__navbar">
+      <app-navbar-component></app-navbar-component>
+    </div> <div class="detail__spacer"></div>
+
+    <div class="detail__character" *ngIf="!updating">
+        <div class="detail__character__profile">
+            <img class="detail__character__profile__icon" [src]="character.image" [alt]="character.name">
+            <div class="detail__character__profile__name">{{ character.name }}</div>
+        </div>
+
+        <div class="detail__character__info">- Gender: {{ character.gender }}</div>
+        <div class="detail__character__info">- Specie: {{ character.species }}</div>
+        <div class="detail__character__info">- Origin: {{ character.origin.name }}</div>
+
+        <div class="detail__character__status">
+            <div class="detail__character__status__title">Estado:</div>
+            <div *ngIf="isAlive(); else elseBlock1" class="detail__character__status__alive"></div>
+            <ng-template #elseBlock1>
+                <div *ngIf="isDead(); else elseBlock2" class="detail__character__status__dead"></div>
+                <ng-template #elseBlock2>
+                    <div class="detail__character__status__unknown"></div>
+                </ng-template>
+            </ng-template>
+            <div class="detail__character__status__status">{{ character.status }}</div>
+        </div>
+
+        <div class="detail__character__options">
+            <button class="detail__character__button detail__character__button--update"
+                (click)="setUpdating()">📝</button>
+            <button class="detail__character__button detail__character__button--delete" 
+                (click)="deleteCharacter()" [routerLink]="['/myCharacters']">❌</button>
+        </div>
+    </div>
+
+    <!-- Si seleccionas editar, cambia la vista y se muestra el formulario -->
+    <div class="detail__form detail__character" *ngIf="updating">
+        <form novalidate (ngSubmit)="updateCharacter()" [formGroup]="createForm">
+            <fieldset class="detail__form__field">
+                <label for="name" class="detail__form__field__name">*Nombre:</label>
+                <input class="detail__form__field__input" type="text" id="name" formControlName="name"/>
+            </fieldset>
+            
+            <fieldset class="detail__form__field">
+                <label for="image" class="detail__form__field__name">*URL de la foto:</label>
+                <input  class="detail__form__field__input"type="text" id="image" formControlName="image"/>
+            </fieldset>
+          
+            <fieldset class="detail__form__field">
+                <label for="species" class="detail__form__field__name">*Especie:</label>
+                <input class="detail__form__field__input" type="text" id="species" formControlName="species"/>
+            </fieldset>
+    
+            <fieldset class="detail__form__field">
+                <label for="gender" class="detail__form__field__name">*Género:</label>
+                <input  class="detail__form__field__input" type="text" id="gender" formControlName="gender"/>
+            </fieldset>
+    
+            <fieldset class="detail__form__field">
+                <label for="origin" class="detail__form__field__name">*Origen:</label>
+                <input class="detail__form__field__input" type="text" id="origin" formControlName="origin"/>
+            </fieldset>
+    
+            <div class="detail__form__field">
+                <label for="status" class="detail__form__field__name">*Estado:</label>
+                <select class="detail__form__field__input detail__form__field__input--selector" formControlName="status">
+                    <option *ngFor="let stat of status" [ngValue]="stat"> {{ stat }}</option>
+                </select>
+            </div>
+          
+            <button class="detail__form__button" type="submit">Update</button>
+          
+        </form>
+    </div>
+
+    <div class="detail__footer">
+      <app-footer-component></app-footer-component>
+    </div>
+</div>

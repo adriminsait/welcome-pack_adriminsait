@@ -10,22 +10,26 @@ import { ApiCallService } from 'src/app/shared/api-call-shared/services/api-call
 })
 export class ListComponentComponent implements OnInit {
 
-  characterList: CharacterInterface[];
+  characterListOriginal: CharacterInterface[];
+  characterListNew: CharacterInterface[];
   filter: string;
   length: number;
 
   constructor(private apiCall: ApiCallService) {
-    this.characterList = [];
+    this.characterListOriginal = [];
+    this.characterListNew = [];
     this.filter = "";
     this.length = 25;
   }
 
   ngOnInit() {
-    this.apiCall.getCharacters().subscribe((datosPeticion: any[]) => {
-      const arrayOri =  datosPeticion[0];
-      const arrayNew = datosPeticion[1];
-      Array.prototype.push.apply(arrayOri, arrayNew)
-      this.characterList = arrayOri;
+    this.apiCall.getCharacters().subscribe((data: any[]) => {
+      this.characterListOriginal = data[0];
+      this.characterListNew = data[1];
+      // const arrayOri =  datosPeticion[0];
+      // const arrayNew = datosPeticion[1];
+      // Array.prototype.push.apply(arrayOri, arrayNew);
+      // this.characterList = arrayOri;
     }, (err) => {
       console.error(err);
     });

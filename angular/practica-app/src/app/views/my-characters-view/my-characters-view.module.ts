@@ -5,12 +5,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './my-characters-component/card/card.component';
 
 
 
 @NgModule({
   declarations: [
-    MyCharactersComponentComponent
+    MyCharactersComponentComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

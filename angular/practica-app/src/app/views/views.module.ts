@@ -11,6 +11,7 @@ import { ListPipesModule } from './list-view/list-pipes.module';
 import { CreateViewModule } from './create-view/create-view.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyCharactersViewModule } from './my-characters-view/my-characters-view.module';
+import { MyCharacterDetailModule } from './my-character-detail/my-character-detail.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MyCharactersViewModule } from './my-characters-view/my-characters-view.
     DetailViewModule,
     CreateViewModule,
     MyCharactersViewModule,
+    MyCharacterDetailModule,
     SharedModule,
     ListPipesModule
   ],

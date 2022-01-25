@@ -1,0 +1,31 @@
+.list__list__character{
+
+    &__icon{
+        height: 90%;
+        border-radius: 4%;
+        margin: 2%;
+
+        @media (min-width: 992px){
+            margin-left: 10px;
+            margin-top: 8px;
+        }
+    }
+
+    &__name{
+        text-decoration: none;
+        color: black;
+        font-size: calc(10px + 1vh + 1vw);
+        margin-left: 5%;
+        margin-top: 10%;
+        margin-bottom: 20%;
+
+        &:hover{
+            color: rgb(0, 90, 94);
+        }
+
+        @media (min-width: 992px){
+            margin-top: 50px;
+        }
+    }
+
+}
