@@ -42,8 +42,8 @@ export class CreateComponentComponent implements OnInit {
         }
       };
       this.apiCall.createCharacter(character).subscribe( result => {
-          console.log(result);
-        } );
+          
+      } );
       this.createForm.reset();
       this.submitted = false;
     }

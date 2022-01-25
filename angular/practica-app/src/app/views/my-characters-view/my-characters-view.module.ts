@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './my-characters-component/card/card.component';
 
 
-
 @NgModule({
   declarations: [
     MyCharactersComponentComponent,

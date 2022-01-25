@@ -6,6 +6,7 @@ import { ApiCallService } from './api-call-shared/services/api-call.service';
 import { NavbarSharedModule } from './navbar-shared/navbar-shared.module';
 import { FooterSharedModule } from './footer-shared/footer-shared.module';
 
+
 @NgModule({
   declarations: [],
   imports: [

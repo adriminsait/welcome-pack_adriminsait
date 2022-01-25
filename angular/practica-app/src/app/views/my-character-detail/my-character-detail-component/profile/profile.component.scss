@@ -1,0 +1,32 @@
+.detail__character__profile{
+    display: flex; 
+    flex-direction: row;
+    justify-content: left; 
+    margin-left: 5%; 
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 1%;
+    border-bottom: 5px solid lightblue;
+
+    &__icon{
+        width: 15%;
+        margin-left: 1%;
+        padding-bottom: 1%; 
+        border-radius: 10%;
+
+        &:hover{
+            width: 17%;
+        }
+    }
+
+    &__name{
+        width:60%;
+        color: black; 
+        font-weight: bold;
+        text-align: center; 
+        margin-left: 5%; 
+        font-size: calc(5px + 1.5vh + 1.5vw); 
+        margin-top: 0.5%;
+        font-size-adjust:initial;
+    }
+}

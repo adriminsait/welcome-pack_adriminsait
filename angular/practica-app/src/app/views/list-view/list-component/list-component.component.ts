@@ -26,10 +26,6 @@ export class ListComponentComponent implements OnInit {
     this.apiCall.getCharacters().subscribe((data: any[]) => {
       this.characterListOriginal = data[0];
       this.characterListNew = data[1];
-      // const arrayOri =  datosPeticion[0];
-      // const arrayNew = datosPeticion[1];
-      // Array.prototype.push.apply(arrayOri, arrayNew);
-      // this.characterList = arrayOri;
     }, (err) => {
       console.error(err);
     });

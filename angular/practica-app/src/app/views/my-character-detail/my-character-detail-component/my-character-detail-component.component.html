@@ -4,26 +4,9 @@
     </div> <div class="detail__spacer"></div>
 
     <div class="detail__character" *ngIf="!updating">
-        <div class="detail__character__profile">
-            <img class="detail__character__profile__icon" [src]="character.image" [alt]="character.name">
-            <div class="detail__character__profile__name">{{ character.name }}</div>
-        </div>
-
-        <div class="detail__character__info">- Gender: {{ character.gender }}</div>
-        <div class="detail__character__info">- Specie: {{ character.species }}</div>
-        <div class="detail__character__info">- Origin: {{ character.origin.name }}</div>
-
-        <div class="detail__character__status">
-            <div class="detail__character__status__title">Estado:</div>
-            <div *ngIf="isAlive(); else elseBlock1" class="detail__character__status__alive"></div>
-            <ng-template #elseBlock1>
-                <div *ngIf="isDead(); else elseBlock2" class="detail__character__status__dead"></div>
-                <ng-template #elseBlock2>
-                    <div class="detail__character__status__unknown"></div>
-                </ng-template>
-            </ng-template>
-            <div class="detail__character__status__status">{{ character.status }}</div>
-        </div>
+        <app-profile [inputCharacter]="character"></app-profile>
+        <app-info [inputCharacter]="character"></app-info>
+        <app-alive [inputStatus]="character.status"></app-alive>
 
         <div class="detail__character__options">
             <button class="detail__character__button detail__character__button--update"

@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiCallService } from './services/api-call.service';
-import { CharacterInterface, CharacterResponseInterface } from './models/character';
 
 
 @NgModule({

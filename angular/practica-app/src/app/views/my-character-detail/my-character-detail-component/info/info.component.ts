@@ -2,16 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CharacterInterface } from 'src/app/shared/api-call-shared/models/character';
 
 @Component({
-  selector: 'app-card-my-character',
-  templateUrl: '../../../my-characters-view/my-characters-component/card/card.component.html',
-  styleUrls: ['../../../my-characters-view/my-characters-component/card/card.component.scss']
-  /* urls originales:
-  templateUrl: './card-my-character.component.html',
-  styleUrls: ['./card-my-character.component.scss']
-   */
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.scss']
 })
-export class CardMyCharacterComponent implements OnInit {
-  
+export class InfoComponent implements OnInit {
   @Input() inputCharacter: CharacterInterface;
 
   constructor() {

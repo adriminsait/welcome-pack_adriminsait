@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./working.component.scss']
 })
 export class WorkingComponent implements OnInit {
-
   title: String;
   body: String;
+
   constructor() {
     this.title = "Genial, ¿y esta página web como funciona?"
     this.body = "Estás en la página de inicio. Si pulsas en el enlace 'Lista', te redigirá a un listado de varios " +

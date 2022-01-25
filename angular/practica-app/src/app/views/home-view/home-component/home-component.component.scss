@@ -34,8 +34,6 @@ $color-default: rgba(85, 218, 218, 0.76);
         }
     }
 
-    //si aqui añado &__title y &__body no me lo hace, tengo que copiarlo y pegarlo 
-    //en cada css de cada hijo 
     &__block{
         display: flex;
         flex-direction: column;

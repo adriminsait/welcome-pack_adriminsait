@@ -57,24 +57,6 @@ export class MyCharacterDetailComponentComponent implements OnInit {
     });
   }
 
-  isAlive(){
-    if(this.character.status == "Alive"){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-
-  isDead(){
-    if(this.character.status == "Dead"){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-
   deleteCharacter(){
     this.apiCall.deleteCharacter(this.character.id).subscribe((res) => {
       

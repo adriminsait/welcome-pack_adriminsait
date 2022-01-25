@@ -735,13 +735,13 @@
     },
     {
       "id": 2,
-      "name": "aa",
+      "name": "Crazy Rick",
       "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg",
-      "species": "sss",
-      "gender": "sss",
-      "status": "Dead",
+      "species": "Human",
+      "gender": "Male",
+      "status": "Alive",
       "origin": {
-        "name": "ss"
+        "name": "Venus"
       }
     },
     {

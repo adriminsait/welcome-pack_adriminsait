@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./description.component.scss']
 })
 export class DescriptionComponent implements OnInit {
-
   question: String;
   answer: String;
-
 
   constructor() {
     this.question = "Espera antes de nada, ¿quienes son Rick y Morty?";

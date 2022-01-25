@@ -15,22 +15,6 @@ export class ApiCallService {
   }
 
   getCharacters() {
-    // return this.http.get(urlOri).pipe(
-    //   map((res: CharacterResponseInterface | any) => {
-    //     if (!res) {
-    //       throw new Error('Error trying to access de API');
-    //     } else {
-    //       const results: CharacterInterface[] = res;
-    //       this.characterList = results;
-    //       console.log(res);
-    //       return results;
-    //     }
-    //   }),
-    //   catchError(err => {
-    //     throw new Error(err.message);
-    //   })
-    // );
-    
     var obsOri: Observable<any>;
     var obsNew: Observable<any>;
     var joinedObservable: Observable<any>;
