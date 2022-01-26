@@ -1,0 +1,11 @@
+<div class="myCharacters">
+
+    <div class="myCharacters__spacer"></div>
+    <div class="myCharacters__list" *ngIf="characterList">
+      <div class="myCharacters__list__character" *ngFor="let character of characterList">
+        <app-card [inputCharacter]="character"></app-card>
+      </div>
+    </div>
+    
+</div>
+

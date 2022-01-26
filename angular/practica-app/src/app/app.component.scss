@@ -1,5 +1,30 @@
+$navbar-height: 40px;
+$footer-height: 50px;
+
 :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    margin: 0;
-    padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background-color: rgba(85, 218, 218, 0.76);
+
+  @media (min-width: 992px){
+      height: calc($navbar-height + 20px);
   }
+}
+
+.footer{
+  height: $footer-height;
+  background-color: rgba(224, 235, 235, 0.7);
+
+  @media (min-width: 992px){
+      height: calc($footer-height + 10px);
+  }
+}

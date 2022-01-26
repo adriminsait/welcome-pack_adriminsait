@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { ViewsModule } from './views/views.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiCallService } from './shared/api-call-shared/services/api-call.service';
+import { CharacterService } from './shared/services/character.service';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -16,16 +15,12 @@ import { ApiCallService } from './shared/api-call-shared/services/api-call.servi
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ViewsModule,
+
     SharedModule
   ],
   providers: [
-    ApiCallService
+    CharacterService
   ],
-  bootstrap: [AppComponent], 
-  
-  exports: [
-    SharedModule
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
