@@ -20,23 +20,20 @@ const reducer = (state, action) => {
   switch (type) {
     case SET_USER:
       return { ...state, user: payload, isLoading: false };
-      break;
     case SET_ERROR:
       return { ...state, error: payload, isLoading: false };
-      break;
     case SET_IS_LOADING:
       return { ...state, isLoading: payload };
-      break;
     default:
       return state;
   }
 };
 
 const Home = () => {
-  // El state nos permitirá destructurar los atributos que queramos
-  const { user, error, isLoading } = state;
   // useReducer devuelve un state y un dispatch, similar a useState
   const [state, dispatch] = useReducer(reducer, initialState);
+  // El state nos permitirá destructurar los atributos que queramos
+  const { user, error, isLoading } = state;
   
 
   useEffect(() => {
@@ -46,13 +43,14 @@ const Home = () => {
       payload: false,
     });
 
-    fetch(USER_API)
+    fetch('https://randomuser.me/api/')
       .then((res) => res.json())
       .then((userData) => {
         // setUser(userData);
+        console.log(userData.results[0]);
         dispatch({
           type: SET_USER,
-          payload: userData,
+          payload: userData.results[0],
         });
       })
       .catch((err) => {
@@ -70,7 +68,7 @@ const Home = () => {
       ) : (
         <div>
           <h2>Data loaded!</h2>
-          {user ? <h3>user.name</h3> : null}
+          {user ? <h3>{user.name.first}</h3> : null}
           {error ? <h3>error</h3> : null}
         </div>
       )}

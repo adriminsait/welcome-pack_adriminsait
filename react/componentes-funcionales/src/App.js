@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import List from './components/List'
 import Form from './components/Form';
 import Counter from './components/Counter';
+import Home from './components/Home/Home';
 
 import './App.css';
 
@@ -42,6 +43,7 @@ function App() {
       <Form handleCreateMessage={handleAddMessage} />
       <List list={messageList} />
       <Counter />
+      <Home />
     </div>
   );
 }
