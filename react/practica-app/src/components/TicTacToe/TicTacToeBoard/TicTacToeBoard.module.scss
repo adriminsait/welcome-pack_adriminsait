@@ -1,0 +1,39 @@
+.turn{
+    margin: 1%;
+    font-size: calc(10px + 0.5vh + 0.5vw);
+    margin-bottom: 5%; 
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button {
+    color: black;
+    text-decoration: none;
+    align-self: center;
+    padding: 5px;
+    padding-bottom: 8px;
+    margin: 2%;
+    width: calc(5vh + 5vw);
+    max-width: 80px;
+    height: calc(4vh + 4vw);
+    max-height: 60px;
+    font-size: calc(7px + 0.5vh + 0.5vw);
+    border: 2px solid rgba(112, 76, 182, 0.5);
+    cursor: pointer;
+    background-color: rgba(112, 76, 182, 0.1);
+    border-radius: 5%;
+  
+    &:hover {
+      border: 2px solid rgb(90, 63, 146);
+      color: rgb(90, 63, 146);
+    }
+}
