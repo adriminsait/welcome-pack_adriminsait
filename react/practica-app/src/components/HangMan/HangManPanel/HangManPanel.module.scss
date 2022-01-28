@@ -1,0 +1,32 @@
+.clue{
+    margin: 1%;
+    font-size: calc(10px + 1vh + 1vw);
+    margin-bottom: 2%; 
+    width: 40%;
+}
+
+.unknown{
+    margin-left: 1%;
+}
+
+.list {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 2% 30%;
+    font-size: calc(10px + 1vh + 1vw);
+
+    &__letters{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+
+        &__letter{
+            margin: 2px;
+        }
+    }
+
+    
+}

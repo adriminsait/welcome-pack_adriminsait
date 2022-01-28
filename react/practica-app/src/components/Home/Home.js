@@ -11,7 +11,6 @@ export const Home = () => {
         <Link to="/tictactoe" className={styles.button}>3 en raya</Link>
         <Link to="/hangman" className={styles.button}>Ahorcado</Link>
         <Link to="/sudoku" className={styles.button}>Sudoku</Link>
-        <Link to="/counter" className={styles.button}>Contador de prueba</Link>
     </div>
   );
 };

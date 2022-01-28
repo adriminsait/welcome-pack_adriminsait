@@ -1,0 +1,24 @@
+.alphabet {
+    margin: 1% 20% 1% 20%;
+
+    &__letter {
+        color: black;
+        text-decoration: none;
+        align-self: center;
+        padding: 5px;
+        padding-bottom: 8px;
+        margin: 0.5%;
+        width: calc(3vh + 3vw);
+        max-width: 40px;
+        font-size: calc(7px + 0.5vh + 0.5vw);
+        border: 2px solid rgba(112, 76, 182, 0.5);
+        cursor: pointer;
+        background-color: rgba(112, 76, 182, 0.1);
+        border-radius: 5%;
+    
+        &:hover {
+        border: 2px solid rgb(90, 63, 146);
+        color: rgb(90, 63, 146);
+        }
+    }
+}
