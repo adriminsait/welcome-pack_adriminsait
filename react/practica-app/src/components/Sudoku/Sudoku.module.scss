@@ -1,0 +1,59 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    width: 100%;
+    font-size: calc(15px + 2vh + 2vw);
+    border-bottom: 4px solid rgba(112, 76, 182, 0.5);
+    background-color: rgba(112, 76, 182, 0.1);
+    border-radius: 2%;
+    padding-bottom: calc(1vh + 1vw);
+    padding-top: calc(1vh + 1vw);
+    margin-bottom: 1%;
+}
+
+.button {
+    color: black;
+    text-decoration: none;
+    align-self: center;
+    padding: 5px;
+    padding-bottom: 8px;
+    margin: 1%;
+    width: calc(12vh + 12vw);
+    max-width: 180px;
+    font-size: calc(7px + 0.5vh + 0.5vw);
+    border: 2px solid rgba(112, 76, 182, 0.5);
+    cursor: pointer;
+    background-color: rgba(112, 76, 182, 0.1);
+    border-radius: 5%;
+  
+    &:hover {
+      border: 2px solid rgb(90, 63, 146);
+      color: rgb(90, 63, 146);
+    }
+}
+
+.win{
+    margin-top: 5%;
+    padding: 2%;
+    font-size: calc(10px + 1vh + 1vw);
+    border-radius: 2%;
+    padding-bottom: calc(1vh + 1vw);
+    padding-top: calc(1vh + 1vw);
+    margin-bottom: 1%;
+    background-color: rgba(164, 229, 151, 0.4);
+}
+
+.lose{
+    margin-top: 5%;
+    padding: 2%;
+    font-size: calc(10px + 1vh + 1vw);
+    border-radius: 2%;
+    padding-bottom: calc(1vh + 1vw);
+    padding-top: calc(1vh + 1vw);
+    margin-bottom: 1%;
+    background-color: rgba(238, 98, 98, 0.3);
+}
