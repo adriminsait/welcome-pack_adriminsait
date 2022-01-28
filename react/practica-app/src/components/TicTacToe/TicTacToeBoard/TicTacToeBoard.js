@@ -9,17 +9,6 @@ import styles from './TicTacToeBoard.module.scss'
 const TicTacToeBoard = () => {
     const { state, setCell } = useContext(TicTacToeContext);
 
-    useEffect(() => {
-        
-
-        return () => {
-        }
-    }, []);
-
-    const handleChangeCell = () => {
-
-    }
-
     return (
         <div>
             <div className={styles.turn}>
