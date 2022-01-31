@@ -20,13 +20,13 @@ import{ setIsStarted,
         selectSolutionStyles,
         selectSeeSolution 
 } from '../slice/sudokuSlice';
-import SudokuBoardCell from './SudokuBoardCell/SudokuBoardCell';
+import SudokuBoard from './SudokuBoard/SudokuBoard';
 
-import styles from './SudokuBoard.module.scss'
+import styles from './SudokuPanel.module.scss'
 
 var sudoku = require('sudoku');
 
-const SudokuBoard = () => {
+const SudokuPanel = () => {
     const isStarted = useSelector(selectIsStarted);
     const win = useSelector(selectWin);
     const lose = useSelector(selectLose);
@@ -106,16 +106,20 @@ const SudokuBoard = () => {
 
         var ok = true;
         for(let i = 0; i < board.length && ok ; i++){
+            console.log(`i: ${i} board: ${board[i]} solution: ${solution[i]}`);
             //si hay una celda sin rellenar o no coincide con la de la solucion has perdido
-            if(board[i] == '' || parseInt(board[i]) != solution[i]){ 
+            if(board[i] === ''){ 
                 dispatch(setLose(true));
                 ok = false;
-                console.log(i);
+                console.log("vacio " + i);
+            }
+            else if(parseInt(board[i]) !== solution[i]){
+                dispatch(setLose(true));
+                ok = false;
+                console.log("distinto " + i);
             }
         }
-
         dispatch(setWin(ok));
-        console.log(board);
         console.log(solution);
     }
 
@@ -125,6 +129,7 @@ const SudokuBoard = () => {
 
     const seeSol = () => {
         dispatch(setSeeSolution(true));
+        dispatch(setLose(false));
     }
 
     return (
@@ -158,30 +163,21 @@ const SudokuBoard = () => {
                 </div>
             ) : (<></>)}
 
-            <form className={styles.board} onSubmit={finishGame}>
-                <div className={styles.board__row}>
-                    <SudokuBoardCell data={{start: 0, end: 8}}/>
-                    <SudokuBoardCell data={{start: 9, end: 17}}/>
-                    <SudokuBoardCell data={{start: 18, end: 26}}/>
-                </div>
-                <div className={styles.board__row}>
-                    <SudokuBoardCell data={{start: 27, end: 35}}/>
-                    <SudokuBoardCell data={{start: 36, end: 44}}/>
-                    <SudokuBoardCell data={{start: 45, end: 53}}/>
-                </div>
-                <div className={styles.board__row}>
-                    <SudokuBoardCell data={{start: 54, end: 62}}/>
-                    <SudokuBoardCell data={{start: 63, end: 71}}/>
-                    <SudokuBoardCell data={{start: 72, end: 80}}/>
-                </div>
-                <button type="submit" className={styles.board__finish}>
-                    Comprobar
-                </button>
-            </form>
-
             {seeSolution ? (
-                <></>
-            ) : (<></>)}
+                <>
+                <div className={styles.info}>
+                    <strong>Solución:</strong>
+                </div>
+                <SudokuBoard type={"solution"}/>
+                </>
+            ) : (
+                <form className={styles.board} onSubmit={finishGame}>
+                    <SudokuBoard type={"board"}/>
+                    <button type="submit" className={styles.board__finish} disabled={lose || win}>
+                        Comprobar
+                    </button>
+                </form>
+            )}
 
             <button className={styles.button} onClick={stopGame}>
                 Dejar de jugar
@@ -190,10 +186,8 @@ const SudokuBoard = () => {
             </>
         )}  
 
-        
-
       </div>
     );
 }
 
-export default SudokuBoard;
+export default SudokuPanel;

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import sudokuStore from './app/sudokuStore';
 
 import styles from './Sudoku.module.scss';
-import SudokuBoard from './SudokuBoard/SudokuBoard';
+import SudokuPanel from './SudokuPanel/SudokuPanel';
 
 
 const Sudoku = () => {
@@ -39,7 +39,7 @@ const Sudoku = () => {
       <div className={styles.title}>Sudoku</div>
       <React.StrictMode>
         <Provider store={sudokuStore}>
-            <SudokuBoard />
+            <SudokuPanel />
         </Provider>
       </React.StrictMode>
     </div>
