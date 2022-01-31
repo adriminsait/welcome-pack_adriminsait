@@ -41,35 +41,61 @@
         
     }
 
-    &__buttonpad{
-        
+    &__finish{
+        color: black;
+        align-self: center;
+        padding: 5px 0 8px 0;
+        margin: 1%;
+        width: calc(12vh + 12vw);
+        max-width: 180px;
+        font-size: calc(5px + 0.5vh + 0.5vw);
+        border: 2px solid rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        background-color: rgba(201, 241, 248, 0.7);
+        border-radius: 5%;
 
-        &__finish{
-
+        &:hover {
+            background-color: rgba(45, 216, 247, 0.7);
         }
     }
 }
 
 .win{
-    margin-top: 5%;
-    padding: 2%;
-    font-size: calc(10px + 1vh + 1vw);
+    margin: 0 20% 2% 20%;
+    font-size: calc(7px + 0.7vh + 0.7vw);
     border-radius: 2%;
-    padding-bottom: calc(1vh + 1vw);
-    padding-top: calc(1vh + 1vw);
-    margin-bottom: 1%;
+    padding-bottom: calc(0.5vh + 0.5vw);
+    padding-top: calc(0.5vh + 0.5vw);
     background-color: rgba(164, 229, 151, 0.4);
 }
 
 .lose{
-    margin-top: 5%;
-    padding: 2%;
-    font-size: calc(10px + 1vh + 1vw);
+    display: flex;
+    flex-direction: column;
+    margin: 0 20% 2% 20%;
+    font-size: calc(7px + 0.7vh + 0.7vw);
     border-radius: 2%;
-    padding-bottom: calc(1vh + 1vw);
-    padding-top: calc(1vh + 1vw);
-    margin-bottom: 1%;
+    padding-bottom: calc(0.5vh + 0.5vw);
+    padding-top: calc(0.5vh + 0.5vw);
     background-color: rgba(238, 98, 98, 0.3);
+
+    &__button {
+        color: black;
+        align-self: center;
+        padding: 5px 0 8px 0;
+        margin: 1%;
+        width: calc(12vh + 12vw);
+        max-width: 180px;
+        font-size: calc(5px + 0.5vh + 0.5vw);
+        border: 2px solid rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 5%;
+
+        &:hover {
+            border: 2px solid rgb(90, 63, 146);
+        }
+    }
 }
 
 .inputStyle {

@@ -1,24 +1,23 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setIsStarted, setWin, setBoard, setCellBoard, setSolution, setFreeCells, setStyles,
-    selectIsStarted, selectWin, selectBoard, selectSolution, selectFreeCells, selectStyles } from '../../slice/sudokuSlice';
+import { setIsStarted, setWin, setBoard, setCellBoard, setSolution, setFreeCells, setBoardStyles,
+    selectIsStarted, selectWin, selectBoard, selectSolution, selectFreeCells, selectBoardStyles } from '../../slice/sudokuSlice';
 
 import styles from './SudokuBoardCell.module.scss'
 
 const SudokuBoardCell = (data) => {
-    const {start, end} = data.data;
+    const {start} = data.data;
 
-    const boardStyle = useSelector(selectStyles);
+    const boardStyle = useSelector(selectBoardStyles);
     const board = useSelector(selectBoard);
 
-    const [breaks, setBreaks] = useState([]);
     const [squareStyle, setSquareStyle] = useState([]);
 
     useEffect(() => {
         //por ejemplo, primer cuadrado: 0-8. Breaks son el 2 y el 5 (cambios de fila)
         //por ejemplo, segundo cuadrado: 9-17 . Breaks son el 11 y el 14 (cambios de fila)
-        setBreaks([start + 2, end - 3]);
+        
         // createSquare();
     }, [])
 

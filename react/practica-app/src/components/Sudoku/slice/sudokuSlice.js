@@ -6,10 +6,12 @@ export const sudokuSlice = createSlice({
   initialState: {
     isStarted: null,  
     win: null,
+    lose: null,
     board: [],
     solution: [],
-    freeCells: null,
-    styles: [],
+    boardStyles: [],
+    solutionStyles: [],
+    seeSolution: null,
   },
 
   reducers: {
@@ -17,7 +19,10 @@ export const sudokuSlice = createSlice({
       state.isStarted = action.payload;
     },
     setWin: (state, action) => {
-      state.win = action.payload
+      state.win = action.payload;
+    },
+    setLose: (state, action) => {
+      state.lose = action.payload;
     },
     setBoard: (state, action) => {
       state.board = action.payload;
@@ -29,22 +34,28 @@ export const sudokuSlice = createSlice({
     setSolution: (state, action) => {
       state.solution = action.payload;
     },
-    setFreeCells: (state, action) => {
-      state.solution = action.payload;
+    setBoardStyles: (state, action) => {
+      state.boardStyles = action.payload;
     },
-    setStyles: (state, action) => {
-      state.styles = action.payload;
+    setSolutionStyles: (state, action) => {
+      state.solutionStyles = action.payload;
+    },
+    setSeeSolution: (state, action) => {
+      state.seeSolution = action.payload;
     }
   },
 });
 
-export const { setIsStarted, setWin, setBoard, setCellBoard, setSolution, setFreeCells, setStyles } = sudokuSlice.actions;
+export const { setIsStarted, setWin, setLose, setBoard, setCellBoard, setSolution, 
+  setBoardStyles, setSolutionStyles, setSeeSolution } = sudokuSlice.actions;
 
 export const selectIsStarted = (state) => state.sudoku.isStarted;
 export const selectWin = (state) => state.sudoku.win;
+export const selectLose = (state) => state.sudoku.lose;
 export const selectBoard = (state) => state.sudoku.board;
 export const selectSolution = (state) => state.sudoku.solution;
-export const selectFreeCells = (state) => state.sudoku.freeCells;
-export const selectStyles = (state) => state.sudoku.styles;
+export const selectBoardStyles = (state) => state.sudoku.boardStyles;
+export const selectSolutionStyles = (state) => state.sudoku.solutionStyles;
+export const selectSeeSolution = (state) => state.sudoku.seeSolution;
 
 export default sudokuSlice.reducer;
