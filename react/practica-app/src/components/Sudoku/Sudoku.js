@@ -36,10 +36,12 @@ const Sudoku = () => {
 
   return (
     <div className={styles.home}>
-    <div className={styles.title}>Sudoku</div>
+      <div className={styles.title}>Sudoku</div>
+      <React.StrictMode>
         <Provider store={sudokuStore}>
             <SudokuBoard />
         </Provider>
+      </React.StrictMode>
     </div>
   );
 };

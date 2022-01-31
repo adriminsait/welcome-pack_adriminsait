@@ -1,37 +1,50 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Creamos el slice del contador:
-// Le ponemos el nombre que tendrá nuestro reducer, en este caso counter.
-// Definimos el estado inicial que tendrá cuando se inicie la aplicación.
-// Definimos el comportamiento que tendrá cada reducer cuando ocurra y el nuevo estado que devolverán.
 export const sudokuSlice = createSlice({
   name: 'sudoku',
+
   initialState: {
     isStarted: null,  
-    sudokuBoard: 1,
-    value: 0,
+    win: null,
+    board: [],
+    solution: [],
+    freeCells: null,
+    styles: [],
   },
+
   reducers: {
-    setBoard: (state, action) => {
-      state.sudokuBoard = action.payload;
-    },
     setIsStarted: (state, action) => {
-        state.isStarted = action.payload;
-      },
-    decrement: (state) => {
-      state.value -= 1;
+      state.isStarted = action.payload;
     },
+    setWin: (state, action) => {
+      state.win = action.payload
+    },
+    setBoard: (state, action) => {
+      state.board = action.payload;
+    },
+    setCellBoard: (state, action) => {
+      const { index, value } = action.payload;
+      state.board[index] = value;
+    },
+    setSolution: (state, action) => {
+      state.solution = action.payload;
+    },
+    setFreeCells: (state, action) => {
+      state.solution = action.payload;
+    },
+    setStyles: (state, action) => {
+      state.styles = action.payload;
+    }
   },
 });
 
-// El slice genera una acción para cada función creada en el reducer.
-// Estas acciones se invocarán con lo que queramos que sea el "payload".
-export const { setBoard, setIsStarted, decrement } = sudokuSlice.actions;
+export const { setIsStarted, setWin, setBoard, setCellBoard, setSolution, setFreeCells, setStyles } = sudokuSlice.actions;
 
-// Podemos crear selectores para recuperar facilmente elementos de nuestra store.
-export const selectBoard = (state) => state.sudoku.board;
 export const selectIsStarted = (state) => state.sudoku.isStarted;
+export const selectWin = (state) => state.sudoku.win;
+export const selectBoard = (state) => state.sudoku.board;
+export const selectSolution = (state) => state.sudoku.solution;
+export const selectFreeCells = (state) => state.sudoku.freeCells;
+export const selectStyles = (state) => state.sudoku.styles;
 
-// Exportamos por defecto el reducer, gracias a ello en el archivo store hacemos:
-// import counterReducer from '../features/counter/counterSlice';
 export default sudokuSlice.reducer;

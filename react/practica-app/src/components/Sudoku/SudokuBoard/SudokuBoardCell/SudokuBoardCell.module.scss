@@ -1,0 +1,24 @@
+.square {
+    display: flex;
+    flex-direction: column;
+    width: calc(8vh + 8vw);
+    height: calc(8vh + 8vw);
+    margin: 0;
+    border: 1px solid black;
+
+    &__row{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 33.3%;
+
+        &__cell{
+            display: flex;
+            justify-content: center;
+            border: 0.1px solid rgba(0, 0, 0, 0.3);
+            padding: 0;
+            width: 33%;
+            font-size: calc(5px + 0.7vh + 0.7vw);
+        }
+    }
+}
