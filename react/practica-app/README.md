@@ -1,6 +1,7 @@
 Realizado por Adrián De Andrés
 
-Esta práctica consta de 4 vistas principales:
+Esta práctica consta de 5 vistas principales:
+- Login: Vista con un boton de login utilizado para la autenticación y protección de rutas mediante la librería auth0-react
 - Home: En esta vista aparecen los enlaces que redirigen a cada juego
 - TicTacToe: Juego del 3 en raya. He utilizado useReducer en la implementación. Consta del componente principal y un componente con el tablero del juego. Para enviar información entre componentes he utilizado Context y Provider
 - Hangman: Juego del ahorcado. He utilizado useState en la implementación. Consta del componente principal y 3 componentes: panel de la pista y las letras ya dichas, contador de intentos restantes y botonera con todas las letras del abecedario. Para enviar información entre componentes he utilizado Context y Provider

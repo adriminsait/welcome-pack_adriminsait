@@ -1,18 +1,19 @@
 .turn{
     margin: 1%;
     font-size: calc(10px + 0.5vh + 0.5vw);
-    margin-bottom: 5%; 
+    margin-bottom: 2%; 
 }
 
 .board{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
 
 .button {
@@ -21,7 +22,7 @@
     align-self: center;
     padding: 5px;
     padding-bottom: 8px;
-    margin: 2%;
+    margin: 0.5%;
     width: calc(5vh + 5vw);
     max-width: 80px;
     height: calc(4vh + 4vw);

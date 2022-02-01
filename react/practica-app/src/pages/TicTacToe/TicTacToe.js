@@ -1,5 +1,8 @@
 import React, { useEffect, useReducer } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react'
 
+import Header from '../../components/Header/Header'
 import TicTacToeBoard from './TicTacToeBoard/TicTacToeBoard'
 
 import styles from './TicTacToe.module.scss';
@@ -9,17 +12,7 @@ export const TicTacToeContext = React.createContext(null);
 const initialState = {
   turn: '',
   isStarted: false,
-  board: [
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-  ],
+  board: [ [''], [''], [''], [''], [''], [''], [''], [''], [''] ],
   winner: null,
   positionsBusy: [],
 };
@@ -35,45 +28,34 @@ const reducer = (state, action) => {
   switch (type) {
 
     case SET_CELL:
-        if(!state.positionsBusy.includes(payload)){
-          var newBoard = state.board;
-          newBoard[payload] = state.turn;
-          state.positionsBusy.push(payload);
+      if(!state.positionsBusy.includes(payload)){
+        var newBoard = state.board;
+        newBoard[payload] = state.turn;
+        state.positionsBusy.push(payload);
 
-          if(state.turn == '' || state.turn == 'O'){
-            state.turn = 'X';
-          }
-          else if(state.turn == 'X'){
-            state.turn = 'O';
-          }
-           
-          return { ...state, board: newBoard};
+        if(state.turn == '' || state.turn == 'O'){
+          state.turn = 'X';
         }
-
-        else{
-          //si la casilla esta ocupada se queda en el turno del que le tocaba
-          return { ...state};
+        else if(state.turn == 'X'){
+          state.turn = 'O';
         }
+          
+        return { ...state, board: newBoard};
+      }
+      else{
+        //si la casilla esta ocupada se queda en el turno del que le tocaba
+        return { ...state};
+      }
 
     case SET_IS_STARTED:
       return { ...state, isStarted: payload };
 
     case RESET:
-      const newboard = [
-        [''],
-        [''],
-        [''],
-        [''],
-        [''],
-        [''],
-        [''],
-        [''],
-        [''],
-      ];
+      const newboard = [ [''], [''], [''], [''], [''], [''], [''], [''], [''] ];
       return {turn: 'X', isStarted: true, board: newboard, winner: null, positionsX: [], positionsO: [], positionsBusy: []};
 
-      case SET_WINNER:
-        return { ...state, winner: payload, isStarted: false };
+    case SET_WINNER:
+      return { ...state, winner: payload, isStarted: false };
 
     default:
       return state;
@@ -85,17 +67,7 @@ const TicTacToe = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { turn, isStarted, board, winner, positionsBusy} = state;
 
-  //cuando hay una casilla nueva ocupada comprueba si hay ganador
-  useEffect(() => {
-      haveWinner();
-  }, [state.positionsBusy.length]);
-
-  const setCell = (coords) =>{
-    dispatch({
-        type: SET_CELL,
-        payload: coords,
-    });
-  }
+  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
 
   const haveWinner = () => {
     const posibilities = [
@@ -122,6 +94,22 @@ const TicTacToe = () => {
     return null;
   }
 
+  //cuando hay una casilla nueva ocupada comprueba si hay ganador
+  useEffect(() => {
+      haveWinner();
+  }, [state.positionsBusy.length]);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+
+  const setCell = (coords) =>{
+    dispatch({
+        type: SET_CELL,
+        payload: coords,
+    });
+  }
+
   const startGame = () => {
     dispatch({
       type: RESET,
@@ -138,7 +126,7 @@ const TicTacToe = () => {
 
   return (
     <div className={styles.home}>
-        <div className={styles.title}>3 en raya</div>
+        <Header message={'3 en raya'} />
 
         {!isStarted ? (
             <button 

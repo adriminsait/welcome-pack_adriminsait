@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react'
 
+import Header from '../../components/Header/Header'
 import HangManCounter from './HangManCounter/HangManCounter'
 import HangManPanel from './HangManPanel/HangManPanel'
 import HangManAlphabet from './HangManAlphabet/HangManAlphabet'
@@ -19,6 +22,8 @@ const HangMan = () => {
   const [win, setWin] = useState(null);
   const [counter, setCounter] = useState(0);
 
+  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+
   useEffect(() => {
       setIsStarted(false);
       setWin(false);
@@ -37,8 +42,11 @@ const HangMan = () => {
           setWin(true);
       }
     }
+  }, [successLetters]);
 
-}, [successLetters]);
+  if (!isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   const sayLetter = (letter) => {
       if(counter < maxTrys && !win){
@@ -68,11 +76,12 @@ const HangMan = () => {
 
   const stopGame = () => {
     setIsStarted(false);
+    setCounter(0);
   }
 
   return (
     <div className={styles.home}>
-        <div className={styles.title}>Ahorcado</div>
+        <Header message={'Ahorcado'} />
 
         {!isStarted ? (
             <button 

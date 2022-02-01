@@ -1,23 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from './components/Home/Home';
-import TicTacToe from './components/TicTacToe/TicTacToe';
-import HangMan from './components/HangMan/HangMan';
-import Sudoku from './components/Sudoku/Sudoku';
+import routes from "./config/routes.js";
 
 import './App.css';
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
-
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/tictactoe" exact element={<TicTacToe />} />
-          <Route path="/hangman" exact element={<HangMan />} />
-          <Route path="/sudoku" exact element={<Sudoku />} />
+          {routes.map((route) => (
+            <Route key={route.path} path={route.path} exact element={route.element} />
+          ))}
         </Routes>
       </div>
     </BrowserRouter>
