@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import{ setIsStarted, 
@@ -15,9 +15,7 @@ import{ setIsStarted,
         selectWin, 
         selectLose, 
         selectBoard, 
-        selectSolution, 
-        selectBoardStyles,
-        selectSolutionStyles,
+        selectSolution,
         selectSeeSolution 
 } from '../slice/sudokuSlice';
 import SudokuBoard from './SudokuBoard/SudokuBoard';
@@ -32,8 +30,6 @@ const SudokuPanel = () => {
     const lose = useSelector(selectLose);
     const board = useSelector(selectBoard);
     const solution = useSelector(selectSolution);
-    const boardStyle = useSelector(selectBoardStyles);
-    const solutionStyles = useSelector(selectSolutionStyles);
     const seeSolution = useSelector(selectSeeSolution);
 
     const dispatch = useDispatch();
@@ -64,15 +60,16 @@ const SudokuPanel = () => {
                     style={{border: 0, padding: "30%", width: "30%", margin: "0 0 0 0", fontSize: "calc(5px + 0.7vh + 0.7vw)"}}></input>);
             }
             else{
-                styles.push(<p style={{padding: 0, width: "30%", margin: "0 0 0 0", padding:"20% 0 0 0", fontWeight: "bold", color: "rgb(90, 63, 146)"}}>{myBoard[i]}</p>);
+                styles.push(<p style={{width: "30%", margin: "0 0 0 0", padding:"20% 0 0 0", fontWeight: "bold", color: "rgb(90, 63, 146)"}}>
+                    {myBoard[i]}</p>);
             }
         }
 
-        if(type == 'board'){
+        if(type === 'board'){
             dispatch(setBoard(myBoard));
             dispatch(setBoardStyles(styles));
         }
-        else if(type == 'solution'){
+        else if(type === 'solution'){
             dispatch(setSolution(myBoard));
             dispatch(setSolutionStyles(styles));
         }
@@ -106,17 +103,14 @@ const SudokuPanel = () => {
 
         var ok = true;
         for(let i = 0; i < board.length && ok ; i++){
-            console.log(`i: ${i} board: ${board[i]} solution: ${solution[i]}`);
             //si hay una celda sin rellenar o no coincide con la de la solucion has perdido
             if(board[i] === ''){ 
                 dispatch(setLose(true));
                 ok = false;
-                console.log("vacio " + i);
             }
             else if(parseInt(board[i]) !== solution[i]){
                 dispatch(setLose(true));
                 ok = false;
-                console.log("distinto " + i);
             }
         }
         dispatch(setWin(ok));
@@ -140,7 +134,8 @@ const SudokuPanel = () => {
             </button>
         ) : (
             <>
-            <div className={styles.info}>Rellena los huecos vacios con números del 0 al 9. <br></br>
+            <div className={styles.info}>
+                Rellena los huecos vacios con números del 0 al 9. <br></br>
                 Cuando termines, puedes comprobar tu solución.
             </div>
 
