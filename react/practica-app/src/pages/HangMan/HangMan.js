@@ -12,7 +12,7 @@ import styles from './HangMan.module.scss';
 export const HangManContext = React.createContext(null);
 export const maxTrys = 5;
 
-const gameWords = ['coche', 'botella', 'zapatilla']; //'abcdefghijklmnopqrstuvwxyz'
+const gameWords = ['coche', 'botella', 'zapatilla'];
 
 const HangMan = () => {
   const [saidLetters, setSaidLetters] = useState([]);
@@ -22,7 +22,7 @@ const HangMan = () => {
   const [win, setWin] = useState(null);
   const [counter, setCounter] = useState(0);
 
-  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   useEffect(() => {
       setIsStarted(false);

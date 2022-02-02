@@ -11,7 +11,7 @@ import styles from './Sudoku.module.scss';
 
 const Sudoku = () => {
 
-  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   if (!isAuthenticated) {
     return <Navigate to="/" />;
   }

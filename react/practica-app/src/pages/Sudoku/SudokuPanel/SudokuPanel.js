@@ -103,7 +103,6 @@ const SudokuPanel = () => {
 
         var ok = true;
         for(let i = 0; i < board.length && ok ; i++){
-            //si hay una celda sin rellenar o no coincide con la de la solucion has perdido
             if(board[i] === ''){ 
                 dispatch(setLose(true));
                 ok = false;

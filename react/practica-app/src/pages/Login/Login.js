@@ -8,7 +8,7 @@ import styles from './Login.module.scss';
 
 export const Login = () => {
 
-  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const {loginWithRedirect, isAuthenticated } = useAuth0();
 
 
   return (

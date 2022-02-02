@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -8,11 +8,10 @@ import styles from './Home.module.scss';
 
 export const Home = () => {
 
-  const {loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   if (!isAuthenticated) {
     return <Navigate to="/" />;
   }
-
 
   return (
     <div className={styles.home}>

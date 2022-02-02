@@ -5,7 +5,6 @@ import { HangManContext } from "../HangMan";
 
 import styles from './HangManPanel.module.scss'
 
-
 const HangManPanel = () => {
     const { word, successLetters, saidLetters } = useContext(HangManContext);
     const [unknown, setUnknown] = useState('');
