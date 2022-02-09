@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -81,6 +85,8 @@ describe('Pruebas con las acciones de notes', () => {
         
         await store.dispatch( startLoadingNotes('TESTING') );
         const actions = store.getActions();
+
+        console.log(actions);
 
         // expect( actions[0] ).toEqual({
         //     type: types.notesLoad,
