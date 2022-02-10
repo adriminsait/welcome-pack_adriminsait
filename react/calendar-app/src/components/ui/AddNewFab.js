@@ -7,16 +7,16 @@ export const AddNewFab = () => {
     const dispatch = useDispatch();
 
     const handleClickNew = () => {
-        dispatch(uiOpenModal());
+        dispatch( uiOpenModal() );
     }
+
 
     return (
         <button
-            className='btn btn-primary fab'
-            onClick={handleClickNew}
+            className="btn btn-primary fab"
+            onClick={ handleClickNew }
         >
-            <i className='fas fa-plus'></i>
-
+            <i className="fas fa-plus"></i>
         </button>
     )
-};
+}

@@ -1,33 +1,34 @@
-import moment from 'moment'
+import moment from 'moment';
+
 import { types } from '../types/types';
 
 const initialState = {
-    events: [
-        {
-            title: 'Ir a buscar al niño al cole',
-            start: moment().toDate(),
-            end: moment().add(2, 'hours').toDate(),
-            bgcolor: '#fafafa',
-            notes: 'Llega a las 20:30',
-            user: {
-                _id: '123',
-                name: 'Adri'
-            }
+    events: [{
+        id: new Date().getTime(),
+        title: 'Comida san valentin',
+        start: moment().toDate(),
+        end: moment().add( 2, 'hours' ).toDate(),
+        bgcolor: '#fafafa',
+        notes: 'En el sitio',
+        user: {
+            _id: '123',
+            name: 'Adri'
         }
-    ],
+    }],
     activeEvent: null
 };
 
-export const calendarReducer = (state = initialState, action) => {
 
-    switch(action.type) {
+export const calendarReducer = ( state = initialState, action ) => {
 
+    switch ( action.type ) {
+        
         case types.eventSetActive:
             return {
                 ...state,
                 activeEvent: action.payload
             }
-
+        
         case types.eventAddNew:
             return {
                 ...state,
@@ -36,7 +37,7 @@ export const calendarReducer = (state = initialState, action) => {
                     action.payload
                 ]
             }
-        
+    
         case types.eventClearActiveEvent:
             return {
                 ...state,
@@ -44,8 +45,26 @@ export const calendarReducer = (state = initialState, action) => {
             }
 
 
+        case types.eventUpdated:
+            return {
+                ...state,
+                events: state.events.map(
+                    e => ( e.id === action.payload.id ) ? action.payload : e
+                )
+            }
+        
+        case types.eventDeleted:
+            return {
+                ...state,
+                events: state.events.filter(
+                    e => ( e.id !== state.activeEvent.id )
+                ),
+                activeEvent: null
+            }
+
         default:
             return state;
     }
+
 
 }

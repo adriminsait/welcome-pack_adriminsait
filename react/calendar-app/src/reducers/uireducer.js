@@ -4,22 +4,26 @@ const initialState = {
     modalOpen: false,
 }
 
-export const uiReducer = (state = initialState, action) => {
 
-    switch(action.type){
+
+export const uiReducer = ( state = initialState, action ) => {
+
+    switch ( action.type ) {
         case types.uiOpenModal:
-            return{
+            return {
                 ...state,
                 modalOpen: true
             }
 
         case types.uiCloseModal:
-            return{
+            return {
                 ...state,
                 modalOpen: false
             }
-
+    
         default:
             return state;
     }
+
+
 }
