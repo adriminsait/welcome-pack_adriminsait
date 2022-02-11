@@ -6,5 +6,5 @@ import './styles.css';
 
 ReactDOM.render(
     <CalendarApp />,
-    document.getElementById('root')
+  document.getElementById('root')
 );
