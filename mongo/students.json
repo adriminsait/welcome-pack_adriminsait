@@ -1,0 +1,47 @@
+[
+    {
+        "firstName" : "Natasha",
+        "lastName" : "Romanoff",
+        "age" : 36,
+        "bootcamp" : "Full Stack Web Development",
+        "skills" : [
+          "HTML",
+          "CSS",
+          "JS",
+          "Angular"
+        ]
+    },
+    {
+        "firstName" : "Bruce",
+        "lastName" : "Banner",
+        "age" : 38,
+        "bootcamp" : "Full Stack Web Development",
+        "skills" : [
+          "HTML",
+          "CSS",
+          "JS",
+          "PHP",
+          "MySQL",
+          "Angular"
+        ]
+    },
+    {
+        "firstName" : "Peter",
+        "lastName" : "Parker",
+        "age" : 23,
+        "bootcamp" : "Full Stack Web Development",
+        "skills" : [
+          "HTML"
+        ]
+    },
+    {
+        "firstName" : "Tony",
+        "lastName" : "Stark",
+        "age" : 40,
+        "bootcamp" : "Full Stack Web Development",
+        "skills" : [
+            "JS",
+            "PHP"
+        ]
+    }
+  ]

@@ -1,0 +1,29 @@
+[
+    {
+      "name": "Full Stack Web Development",
+      "group": 1,
+      "format": "Full Time"
+    },
+    {
+      "name": "Full Stack Web Development",
+      "group": 2,
+      "format": "Full Time"
+    },
+    {
+      "name": "Full Stack Web Development",
+      "group": 1,
+      "format": "Part Time"
+    },
+    {
+      "name": "Full Stack Web Development",
+      "group": 2,
+      "format": "Part Time"
+    },
+    {
+      "name": "Frontend development",
+      "group": 1,
+      "format": "Part Time"
+    }
+  ]
+
+  

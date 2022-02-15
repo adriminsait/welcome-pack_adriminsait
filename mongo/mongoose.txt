@@ -1,0 +1,86 @@
+Configurar mongoose
+
+1.- Instalarlo
+
+    npm i mongoose
+
+2.- Configurarlo
+
+    const mongoose = require('mongoose');
+
+    const dbConnection = async() => {
+
+        try {
+            
+            //la conexion al cluster de mongo compass
+            const connection = 'mongodb+srv://adri:adriPassword@cluster0.7cjir.mongodb.net/mern_calendar';
+
+            await mongoose.connect( connection , {
+                useNewUrlParser: true, 
+                useUnifiedTopology: true
+            });
+
+            console.log('DB Online');
+
+        } catch (error) {
+            console.log(error);
+            throw new Error('Error a la hora de inicializar BD');
+        }
+    }
+
+    module.exports = {
+        dbConnection
+    }
+
+
+
+Como usar mongoose
+
+1.- Crear un Schema que representa a un documento. En el se definen los campos y sus caracteristicas:
+
+    const WorkerSchema = mongoose.Schema({
+        //campo normal
+        name: {
+            type: String,
+            required: true
+        },
+        //campo normal
+        lastName: {
+            type: String,
+            required: true
+        },
+        //campo unico (no se repite en el resto de documentos)
+        dni: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        //campo referencia a otro documento
+        oficina: {
+            type: Schema.Types.ObjectId,
+            ref: 'Oficina',
+            required: true
+        }
+    });
+
+2.- Crear el modelo para poder realiar acciones contra la base de datos:
+
+    const Worker = mongoose.model('Worker', WorkerSchema );
+
+3.- Funciones contra la base de datos:
+
+    .deleteMany()
+    .deleteOne()
+    .find()
+    .findById()
+    .findByIdAndDelete()
+    .findByIdAndRemove()
+    .findByIdAndUpdate()
+    .findOne()
+    .findOneAndDelete()
+    .findOneAndRemove()
+    .findOneAndReplace()
+    .findOneAndUpdate()
+    .replaceOne()
+    .updateMany()
+    .updateOne()

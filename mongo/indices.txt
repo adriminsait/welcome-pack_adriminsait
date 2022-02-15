@@ -1,0 +1,18 @@
+db.<collection>.getIndexes() => obtener indices de la coleccion
+
+db.<collection>.find().hint({<campoIndice> : 1}) => muestra los documentos que tengan el indice <campoIndice>
+
+- Sencillo
+db.<collection>.createIndex({<campo>: 1}, {options}) => crea un indice sencillo en el campo
+- Compuesto
+db.<collection>.createIndex({<campo1>: 1, ..., <campo31>: 1}, {options}) => crea un indice compuesto
+    => {options}
+        => {unique: true} => crea un indice unico en el campo, es decir, el valor del campo no se puede repetir
+        => {background: true} => evita que al crear el indice se bloquee la coleccion
+        => {name: 'nombre} => da un nombre al indice
+        => {sparse: true} => los documentos que no contengas el campo del indice no se le asigna dicho campo a null
+        => {partialFilterExpression: {filter}} => crea un indice para los documentos que cumplan {filter}
+        => 
+
+
+db.<collection>.dropIndex({<campo>:1}) => eliminar indice del campo

@@ -1,0 +1,76 @@
+db.createCollection(<nombre>) => crea una coleccion
+
+db.<collection>.drop() => elimina la coleccion <collection>
+
+db.dropDatabase() => elimina la base de datos
+
+db.<collection>.insert({}) => añade un documento en la coleccion
+
+db.<collection>.insertMany([{}]) => añade varios documentos a la coleccion
+
+db.<collection>.find().pretty() => muestra todos los documentos de la coleccion
+
+db.<collection>.find().pretty() => muestra todos los documentos de la coleccion
+
+db.<collection>.find({filter}).pretty() => filtra y muestra documentos de la coleccion
+    => {filter}    
+        => {<campo>: 'algo'} => filtra por el campo que es igual a 'algo'
+        => {<campo>: {$exists: true/false}} => seleccina todos los documentos que tengan/no tengas el campo <campo>
+        => {<campo>: 'algo'}, { <campo>: 1} => filtra y muestra los campos asignados con valor 1
+        => {<campo>: {expresion}}
+                        => {expresion}
+                            => {$gt: 20} => filtra por el campo mayor que 20
+                            => {$gte: 20} => filtra por el campo mayor o igual que 20
+                            => {$lt: 20} => filtra por el campo menor que 20
+                            => {$lte: 20} => filtra por el campo menor o igual que 20
+                            => {$ne: 'algo'} => filtra por el campo que no sea igual a 'algo'
+                            => {$in: []} => filtra por el campo cuyo valor este en el array
+                            => {$nin: []} => filtra por el campo cuyo valor no este en el array
+                            => {$regex: /^J/} => filtar por el campo que empiece por J
+                            => {$regex: /A$/} => filtar por el campo que termine por A
+                            => {$regex: /S/} => filtar por el campo que cpntenga una S
+        => $and: [{filter1}, ... , {filterN}] => filtra los documentos que cumplen todas las condiciones
+        => $or: [{filter1}, ... , {filterN}] => filtra los documentos que cumple alguna de las condiciones
+        => $nor: [{filter1}, ... , {filterN}] => filtra los documentos que no cumplen ninguna de las condiciones
+        => $not: {filter} => establece que el filtro {filter} haga lo contrario
+
+db.<collection>.find().forEach(x => {function}) => recorre el resultado de la consulta
+
+db.<collection>.find().limit(<limite>) => muestra los <limite> primeros valores
+
+db.<collection>.find().sort(<campo>: 1/-1) => ordena la salida en funcion del campo. -1 descendente y 1 ascendente
+
+db.<collection>.find().skip(<posicion>) => muestra el resultado de la consulta a partir de la posicion <posicion>
+
+db.<collection>.find().toArray() => convierte la salida en formato Array. Se pueden aplicar metodos de array 
+
+db.<collection>.find().count() => muestra el numero de documentos obtenidos en la salida. Asociado a .find()
+
+db.<collection>.find().size() => muestra el numero de documentos obtenidos en la salida. Asociado al filtro
+
+db.<collection>.update( {filter}, {accion} ) => actualiza campos del documento que cumplen la condicion {filter}
+    => {accion}
+        => {$set: { <campo>: 'nuevo valor' }} => actualiza el campo <campo> 
+        => {$unset: { <campo>: '' }} => elimina el campo <campo> del documento
+        => {$inc: { <campo>: 5 }} => incrementa el valor del campo <campo> 5 unidades
+        => {$rename: { <campo>: 'nuevo nombre' }} => cambia el nombre del campo <campo>
+        => {$mul: { <campo>: 2 }} => multiplica el valor del campo <campo> por 2
+        => {$max: { <campo>: 25 }} => establece que el valor maximo del campo <campo> es 25 
+        => {$min: { <campo>: 7 }} => establece que el valor minimo del campo <campo> es 7
+        => {$pull: { <array>: <elem> }} => elimina el elemento del array. Solo para campos que son arrays
+        => {$push: { <array>: <elem> }} => añade el elemento al array. Solo para campos que son arrays
+        => {$pop: { <array>: 1/-1 }} => 1 elimina el ultimo elemento del array y -1 el primero
+
+db.<collection>.remove({filter}) => elimina todos los documentos que cumplan la condicion {filter}
+
+db.<collection>.aggregate([
+  { $match: { <campo>: 'valor', }}, // $match es el filtro 
+  { "$lookup": { 
+    from: <collection>, //coleccion que quieres agregar
+    localField: <foreign>, //campo que hace referencia a la coleccion extranjera 
+    foreignField: <foreignField>, //campo de la coleccion extranjera que vamos a referenciar
+    as: <campoNuevo>
+  }},
+  { "$unwind": "$<campoNuevo>" } //se crea un campo nuevo que va a contener la informacion de la coleccion extranjera
+]).pretty() => un JOIN de sql pero hecho en mongo
+
