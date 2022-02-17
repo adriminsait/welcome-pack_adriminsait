@@ -1,0 +1,98 @@
+db.<collection>.aggregate([ 
+    {$project: 
+        {
+            <campo>: 1,
+            <resultado>: {operacion}
+        }
+    }
+]) => realiza consultas. Muestra los campos con valor a 1 y el resultado de la operacion
+    => {operacion}
+        => {$sum: '$<campo>'} => muestra la suma de todos los valores del campo <campo>. Array
+        => {$avg: '$<campo>'} => muestra la media de los valores del campo <campo>. Array
+        => {$ceil: {operacion}} => redondea hacia arriba el valor resultante de la operacion
+        => {$floor: {operacion}} => redondea hacia abajò el valor resultante de la operacion
+        => {$multiply: ['$<campo1>', ..., '$<campoN>']} => Multiplica los campos especificados
+        => {$subtract: ['$<campo1>', ..., '$<campoN>']} => Resta los campos especificados
+        => {$toLower: '$<campo>'} => Pone en minuscula el campo <campo>
+        => {$toUper: '$<campo>'} => Pone en mayuscula el campo <campo>
+        => {$trim: {input: '$<campo>', char:<char>}} => Elimina los caracteres <char> en el campo <campo>
+        => {$ltrim: {input: '$<campo>', char:<char>}} => Elimina los caracteres <char> en el campo <campo> por el inicio
+        => {$rtrim: {input: '$<campo>', char:<char>}} => Elimina los caracteres <char> en el campo <campo> por el fin
+        => {$substrCP: {input: '$<campo>', <pos>, <count>}} => Crea un substring
+        => {$strLenCP: '$<campo>'} => Devuelve la longitud de la cadena
+        => {$concat: ['$<campo1>', ..., '$<campoN>']} => Devuelve una cadena formado por todos los campos
+        => {$eq: ['$<campo1>', '$<campo2>']} => compara si los 2 campos son iguales y devuelve true o false
+        => {$gt: ['$<campo1>', '$<campo2>']} => compara si <campo1> es mayor que <campo2> y devuelve true o false
+        => {$gt/e: ['$<campo1>', '$<campo2>']} => compara si <campo1> es mayor que <campo2> y devuelve true o false
+        => {$lt/e: ['$<campo1>', '$<campo2>']} => compara si <campo1> es menor que <campo2> y devuelve true o false
+        => {$and: [{expresion1}, ..., {expresionN}]} => si se cumplen varias condiciones que devuelvan true o false
+        => {$year: '$<date>'} => devuelve el año de un campo con tipo Date
+        => {$month: '$<date>'} => devuelve el mes de un campo con tipo Date
+        => {$week: '$<date>'} => devuelve la semana de un campo con tipo Date
+        => {$dayOfyear: '$<date>'} => devuelve el dia del año de un campo con tipo Date
+        => {$dayOfMonth: '$<date>'} => devuelve el dia del mes de un campo con tipo Date
+        => {$dayOfWeek: '$<date>'} => devuelve el dia de la semana de un campo con tipo Date
+        => {$dateToString: {format: '%d-%m-%y', date:'$<date>'}} => devuelve un objeto Date como un string
+        => {$arrayElemAt: ['$<array>', <index>]} => devuelve array[index]
+        => {$concatArrays: ['$<array1>', ..., '$<arrayN>']} => junta varios arrays
+        => {$reverseArray: '$<array>'} => muestra el array al reves
+        => {$slice: ['$<array>', <pos>, <count>]} => crea un subarray desde pos hasta pos+count
+        => {$size: '$<array>'} => muestra la longitud del array
+        => {$toString: '$<campo>'} => convierte el campo a una cadena
+        => {$toDecimal: '$<campo>'} => convierte el campo a un numero
+        => {$switch: {
+                branches: [
+                    {case: {operacion1}, then <valor>}
+                    {case: {operacion2}, then <valor>}
+                ],
+                default: <valor>
+            }} => un switch para valorar distintos casos y devolver salida adaptada 
+        => {$type: '$<campo>'} => devuelve el tipo del campo
+
+db.<collection>.aggregate([ 
+    {$group: 
+        {
+            _id: '$<campo>', //campo que quieres agrupar. Ej: _id: '$sexo'
+            <resultado>: {operacion} //operacion sobre los documentos agrupados. Ej: totEdad:{$sum:'$edad'}
+        }
+    }
+]) => agrupa documentos de una coleccion en funcion de un campo y realiza una operacion sobre las agrupaciones
+
+db.<collection>.aggregate([ 
+    {$match: 
+        {
+            <campo>: 'valor' //Ej: nombre: /o$/
+        }
+    }
+]) => filtra documentos si el campo coincide con el valor
+
+
+db.<collection>.aggregate([ 
+    { $limit: <valor> }
+]) => limita el numero de documentos 
+
+db.<collection>.aggregate([ 
+    { $sort: {<campo>: 1/-1} }
+]) => ordena la salida. -1 descendente, 1 ascendente
+
+db.<collection>.aggregate([ 
+    { $unwind: '$<array>' }
+]) => destructura arrays. Muestra una salida completa para cada elemento del campo <array>
+
+db.<collection>.aggregate([ 
+    ...
+    { $out: '<coleccion>' }
+]) => guarda el resultado de la agregacion en una coleccion nueva
+
+db.<collection1>.aggregate([
+    { "$lookup": 
+        { 
+            from: <collection2>, //coleccion extranjera que quieres unir
+            localField: <campo>, //campo que hace referencia al campo extranjero
+            foreignField: <foreignField>, //campo de la coleccion extranjera que vamos a referenciar con localField
+            as: <campoNuevo> //campo en el que se va a mostrar los datos de la tabla extranjera
+        }
+    }
+]) => hace un JOIN
+
+db.<collection>.aggregate([]).itcount() => devuelve el numero de documentos de la coleccion

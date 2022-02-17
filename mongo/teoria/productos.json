@@ -1,0 +1,50 @@
+[
+    {
+        "idCategoria": 1,
+        "nombre": "alimentos",
+        "descripcion": "productos alimenticios",
+        "habilitado": 1
+    },
+    {
+        "idCategoria": 2,
+        "nombre": "bebidas",
+        "descripcion": "agua, refresco, cerveza",
+        "habilitado": 1
+    }
+]
+
+
+[
+    {
+        "idCategoria": 1,
+        "nombre": "galletas",
+        "precio": 1.5,
+        "idMarca": 1
+    },
+    {
+        "idCategoria": 1,
+        "nombre": "queso",
+        "precio": 2,
+        "idMarca": 1
+    },
+    {
+        "idCategoria": 2,
+        "nombre": "refresco",
+        "precio": 0.8,
+        "idMarca": 2
+    }
+]
+
+[
+    {
+        "idMarca": 1,
+        "nombre": "Fontaneda",
+        "habilitado": 1
+    },
+    {
+        "idMarca": 2,
+        "nombre": "Coca-Cola",
+        "habilitado": 1
+    }
+]
+

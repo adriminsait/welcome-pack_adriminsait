@@ -63,14 +63,3 @@ db.<collection>.update( {filter}, {accion} ) => actualiza campos del documento q
 
 db.<collection>.remove({filter}) => elimina todos los documentos que cumplan la condicion {filter}
 
-db.<collection>.aggregate([
-  { $match: { <campo>: 'valor', }}, // $match es el filtro 
-  { "$lookup": { 
-    from: <collection>, //coleccion que quieres agregar
-    localField: <foreign>, //campo que hace referencia a la coleccion extranjera 
-    foreignField: <foreignField>, //campo de la coleccion extranjera que vamos a referenciar
-    as: <campoNuevo>
-  }},
-  { "$unwind": "$<campoNuevo>" } //se crea un campo nuevo que va a contener la informacion de la coleccion extranjera
-]).pretty() => un JOIN de sql pero hecho en mongo
-

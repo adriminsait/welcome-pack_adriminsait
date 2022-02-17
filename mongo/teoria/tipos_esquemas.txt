@@ -1,0 +1,117 @@
+- ObjectId => crea el id con el que se almacena un documento en la coleccion
+    .getTimestamp() => devuelve la fecha de creacion de dicho elemento
+    .valueOf() => devuelve el id en tipo string
+
+- Date => crea un objeto fecha
+    new Date() => devuelve un objeto Date con la fecha de hoy
+    new Date("2022-2-14") => devuelve un objeto Date con la fecha especificada
+
+- NumberInt => crea un numero entero corto (mongo por defecto crea los numeros como decimales)
+
+- NumberLong => igual que NumberInt pero mas largo
+
+- Esquema para la creacion de una coleccion
+db.createCollection('CategoriasEsquema', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            required:['idCategoria', 'nombre'],
+            properties: {
+                idCategoria: {
+                    bsonType: 'number',
+                    description: 'Id de la categoria'
+                },
+                nombre: {
+                    bsonType: 'string',
+                    description: 'Nombre de la categoria'
+                },
+                descripcion: {
+                    bsonType: 'string',
+                    description: 'Descripcion de la categoria'
+                },
+                habilitado: {
+                    bsonType: 'number',
+                    description: 'Indica si la categoria existe o no'
+                },
+            }
+        }
+    }
+})
+
+db.createCollection('ProductosEsquema', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            required:['nombre', 'idCategoria', 'idMarca'],
+            properties: {
+                nombre: {
+                    bsonType: 'string',
+                    description: 'Nombre del producto'
+                },
+                precio: {
+                    bsonType: 'number',
+                    description: 'Precio del producto'
+                },
+                idCategoria: {
+                    bsonType: 'number',
+                    description: 'Id de la categoria'
+                },
+                idMarca: {
+                    bsonType: 'number',
+                    description: 'Id de la categoria'
+                }
+            }
+        }
+    }
+})
+
+db.createCollection('MarcasEsquema', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            required:['nombre', 'idMarca'],
+            properties: {
+                nombre: {
+                    bsonType: 'string',
+                    description: 'Nombre de la marca'
+                },
+                idMarca: {
+                    bsonType: 'number',
+                    description: 'Id de la marca'
+                },
+                habilitado: {
+                    bsonType: 'number',
+                    description: 'Indica si la marca existe o no'
+                }
+            }
+        }
+    }
+})
+
+db.createCollection('PersonaEsquema', {
+    validator:{
+        $jsonSchema: {
+            bsonType: 'object',
+            required:['idPersona'],
+            properties: {
+                idPersona: {
+                    bsonType: 'string',
+                    description: 'Id de la persona'
+                },
+                edad: {
+                    bsonType: 'number',
+                    minimum: 0,
+                    maximum: 80,
+                    description: 'Edad de la persona'
+                },
+                sexo: {
+                    enum: ['Masculino', 'Femenino'],
+                    description: 'Sexo de la persona'
+                }
+            }
+        }
+    }
+})
+
+- Crear una vista. Es una query pre-fabricada, solo permite leer documentos
+db.createView('vistaProductos', 'ProductosEsquema', [{$match:{idCategoria: 1}}])
