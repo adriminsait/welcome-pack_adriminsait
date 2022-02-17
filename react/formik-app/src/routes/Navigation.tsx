@@ -46,24 +46,12 @@ export const Navigation = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/register">
-            <RegisterPage />
-          </Route>
-          <Route path="/formik-basic">
-            <FormikBasicPage />
-          </Route>
-          <Route path="/formik-yup">
-            <FormikYupPage />
-          </Route>
-          <Route path="/formik-components">
-            <FormikComponents />
-          </Route>
-          <Route path="/formik-abstractation">
-            <FormikAbstraction />
-          </Route>
-          <Route path="/">
-            <h1>Home</h1>
-          </Route>
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/formik-basic" element={<FormikBasicPage />} />
+          <Route path="/formik-yup"element={<FormikYupPage />} />
+          <Route path="/formik-components"element={<FormikComponents />} />
+          <Route path="/formik-abstractation"element={<FormikAbstraction />} />
+          <Route path="/"element={<h1>Home</h1>} />
         </Routes>
       </div>
     </Router>

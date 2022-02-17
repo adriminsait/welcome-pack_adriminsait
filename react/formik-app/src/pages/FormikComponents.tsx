@@ -55,7 +55,7 @@ export const FormikComponents = () => {
                                 <label htmlFor="jobType">Job Type</label>
                                 <Field name="jobType" as="select">
                                     <option value="">Pick something</option>
-                                    <option value="developer">Develper</option>
+                                    <option value="developer">Developer</option>
                                     <option value="designer">Designer</option>
                                     <option value="it-senior">IT Senior</option>
                                     <option value="it-jr">IT Jr.</option>
